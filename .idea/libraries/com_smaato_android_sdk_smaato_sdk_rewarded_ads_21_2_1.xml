@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="com.smaato.android.sdk:smaato-sdk-rewarded-ads-21.2.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/smaato-sdk-rewarded-ads-21.2.1.aar/b4dcf6cc1155279115b07e66e55276df/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/smaato-sdk-rewarded-ads-21.2.1.aar/b4dcf6cc1155279115b07e66e55276df/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.smaato.android.sdk/smaato-sdk-rewarded-ads/21.2.1/de9a84be3a4b4203e2d9c7974304856d38607c78/smaato-sdk-rewarded-ads-21.2.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>

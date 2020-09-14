@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="com.mopub:mopub-sdk-native-video-5.10.0">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/mopub-sdk-native-video-5.10.0.aar/0a266869fd815cc972ed3d77b918b51f/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/mopub-sdk-native-video-5.10.0.aar/0a266869fd815cc972ed3d77b918b51f/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mopub/mopub-sdk-native-video/5.10.0/973ffa7f6eab46332f038182ad681da41f5faa9a/mopub-sdk-native-video-5.10.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

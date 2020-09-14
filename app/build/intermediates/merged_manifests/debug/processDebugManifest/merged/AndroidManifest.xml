@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.admixer.sample"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="17"
+        android:targetSdkVersion="28" />
+
+    <!-- Common, AdMob, Cauly, Facebook, Adfit(adam), Dawin Click(SyrupAd, T-ad), MAN(MANPLUS), Mopub, Smaato -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- Common, AdMob, Cauly, Facebook, Adfit(adam), Dawin Click(SyrupAd, T-ad), MAN(MANPLUS), Mopub, Smaato -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Dawin Click(SyrupAd, T-ad) -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- Facebook -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!-- MAN(MANPLUS), Smaato(optional) -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- MAN(MANPLUS) -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!-- MAN(MANPLUS), Facebook -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!-- Smaato -->
+    <uses-feature android:name="android.hardware.location.network" />
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <application
+        android:name="androidx.multidex.MultiDexApplication"
+        android:allowBackup="false"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:debuggable="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="AdMixerSample"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true" >
+
+        <!-- 광고가 삽입되는 Activity에 아래와 같이 configChanges 적용 -->
+        <activity
+            android:name="com.admixer.sample.AdMixerSampleActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:label="AdMixerSample" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Common -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <!-- AdMob -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-xxxxxxxxxxxxxxxx~yyyyyyyyyy" />
+
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent" />
+
+        <!-- For Facebook -->
+        <activity
+            android:name="com.facebook.ads.AudienceNetworkActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <!-- For MANPLUS -->
+        <activity
+            android:name="com.mapps.android.view.InterstitialView"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+
+        <!-- For DawinClick -->
+        <receiver android:name="com.skplanet.tad.SyrupAdReceiver" >
+            <intent-filter>
+                <action android:name="com.skplanet.syrupad.action.SAID_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.skplanet.tad.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:label="Ad Activity"
+            android:theme="@android:style/Theme.NoTitleBar" />
+
+        <!-- For Cauly -->
+        <activity
+            android:name="com.fsn.cauly.blackdragoncore.LandingActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize" >
+        </activity>
+
+        <!-- For MoPub -->
+        <!-- MoPub's consent dialog -->
+        <activity
+            android:name="com.mopub.common.privacy.ConsentDialogActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/MoPubFullscreenTheme" />
+
+        <!-- All ad formats -->
+        <activity
+            android:name="com.mopub.common.MoPubBrowser"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/MoPubFullscreenTheme" />
+
+        <!-- Interstitials -->
+        <activity
+            android:name="com.mopub.mobileads.MoPubActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/MoPubFullscreenTheme" />
+        <activity
+            android:name="com.mopub.mobileads.MraidActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/MoPubFullscreenTheme" />
+        <activity
+            android:name="com.facebook.ads.internal.ipc.RemoteANActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="false"
+            android:process=":adnw"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <service
+            android:name="com.facebook.ads.internal.ipc.AdsProcessPriorityService"
+            android:exported="false" />
+        <service
+            android:name="com.facebook.ads.internal.ipc.AdsMessengerService"
+            android:exported="false"
+            android:process=":adnw" />
+
+        <provider
+            android:name="com.facebook.ads.AudienceNetworkContentProvider"
+            android:authorities="com.admixer.sample.AudienceNetworkContentProvider"
+            android:exported="false" />
+
+        <activity
+            android:name="com.mopub.mobileads.RewardedMraidActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/MoPubFullscreenTheme" />
+        <activity
+            android:name="com.mopub.mobileads.MraidVideoPlayerActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/MoPubFullscreenTheme" />
+
+        <receiver
+            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+            android:enabled="true"
+            android:exported="false" >
+        </receiver>
+        <receiver
+            android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.INSTALL_PACKAGES" >
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.google.android.gms.measurement.AppMeasurementService"
+            android:enabled="true"
+            android:exported="false" />
+        <service
+            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+            android:enabled="true"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service
+            android:name="com.google.firebase.components.ComponentDiscoveryService"
+            android:exported="false" >
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+        </service>
+
+        <receiver
+            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="com.google.firebase.provider.FirebaseInitProvider"
+            android:authorities="com.admixer.sample.firebaseinitprovider"
+            android:exported="false"
+            android:initOrder="100" />
+
+        <activity
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <provider
+            android:name="com.google.android.gms.ads.MobileAdsInitProvider"
+            android:authorities="com.admixer.sample.mobileadsinitprovider"
+            android:exported="false"
+            android:initOrder="100" /> <!-- enable api 17 : android:supportsRtl="true" -->
+        <activity
+            android:name="com.kakao.adfit.common.inappbrowser.activity.IABActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.NoTitleBar"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.smaato.sdk.interstitial.InterstitialAdActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout             |smallestScreenSize|locale|fontScale|keyboard|layoutDirection|mcc|mnc|uiMode|density"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.smaato.sdk.rewarded.widget.RewardedInterstitialAdActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout             |smallestScreenSize|locale|fontScale|keyboard|layoutDirection|mcc|mnc|uiMode|density"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+        <activity
+            android:name="com.smaato.sdk.core.browser.SmaatoSdkBrowserActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize" />
+
+        <provider
+            android:name="com.smaato.sdk.core.lifecycle.ProcessLifecycleOwnerInitializer"
+            android:authorities="com.admixer.sample.smaato-lifecycle-process"
+            android:exported="false" />
+    </application>
+
+</manifest>

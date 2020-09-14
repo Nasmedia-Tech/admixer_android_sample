@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.smaato.android.sdk:module-richmedia:21.5.2@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-module-richmedia-21.5.2.aar/b383af80c1cb09caa799601fed6eefce/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-module-richmedia-21.5.2.aar/b383af80c1cb09caa799601fed6eefce/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-module-richmedia-21.5.2.aar/b383af80c1cb09caa799601fed6eefce/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

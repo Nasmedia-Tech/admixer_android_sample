@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.0.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="894922f67adeaaef51f077a29e315da21a3382d3">
+        <dex dex="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-24.0.0_698305163b4823da88c0a09ae845c2d1a2508c6b.jar" />
+    </item>
+    <item
+        jar="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="d0460bf07cc3657e0be518ca01c174493951c6b8">
+        <dex dex="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-ads-10.0.1_a8a0dccb2f7378eee287b8a5bd64c6909316fe7e.jar" />
+    </item>
+    <item
+        jar="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\exploded-aar\AudienceNetwork\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="027c5ee10c0d222a7f8745b32d83e4d96dcd1595">
+        <dex dex="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\pre-dexed\debug\intermediates-exploded-aar-AudienceNetwork_0175335386a394045a7fb78fe8fe1d5dbfe82d98.jar" />
+    </item>
+    <item
+        jar="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-clearcut\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="1d193729baf37df3d902a423291423a0df7e3779">
+        <dex dex="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-clearcut-10.0.1_ecdb732b1d564910cc33f01642290f7edc29f6b0.jar" />
+    </item>
+    <item
+        jar="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
+        <dex dex="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-base-10.0.1_8546d608d1a89267501ae6b247daecf2c7254bbb.jar" />
+    </item>
+    <item
+        jar="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics-impl\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
+        <dex dex="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-analytics-impl-10.0.1_afcdca7343f2cb85ef431e1bc82115b841a39e4c.jar" />
+    </item>
+    <item
+        jar="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
+        <dex dex="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-analytics-10.0.1_d90e99e7203d75ecc8c16a72f71184efb2357e40.jar" />
+    </item>
+    <item
+        jar="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.0.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="e70f608219ed6b974644c333249ab2bb7b71de98">
+        <dex dex="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-24.0.0_cf6a99618fac84470989bf5cf0088fb5b18d1b32.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\pre-dexed\debug\picasso-2.5.2_2428dbd5eabf65ae69bc01abd6e4b72d08e545aa.jar" />
+    </item>
+    <item
+        jar="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
+        <dex dex="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-common-10.0.1_018e26dc4a23248b90bbf337c29f19c01f5c78ac.jar" />
+    </item>
+    <item
+        jar="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\libs\aplus_sdk2.0(20170405).jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="016384c3984e6fcebd6b249a9fa4ee445a288087">
+        <dex dex="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\pre-dexed\debug\aplus_sdk2.0(20170405)_6a8647d0bcb35b8d27158d60c43ed33e52aafdfa.jar" />
+    </item>
+    <item
+        jar="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\exploded-aar\AdfitSDK-2.4.1\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="2b00559e392813814e78d1c7325a8c44d1d0a69e">
+        <dex dex="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\pre-dexed\debug\intermediates-exploded-aar-AdfitSDK-2.4.1_6f602e3d91ccb636a74bf463736e86f83f849b11.jar" />
+    </item>
+    <item
+        jar="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
+        <dex dex="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.0.0_62faa6b6039ef4c4c6df1221f2765cdccc580187.jar" />
+    </item>
+    <item
+        jar="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.0.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="0874286cc2fd88d54fdf130e9d5372730da6de97">
+        <dex dex="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-24.0.0_8e8752434bd6e72951fc26d2af1c12c8a1d819a0.jar" />
+    </item>
+    <item
+        jar="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\exploded-aar\com.google.firebase\firebase-iid\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
+        <dex dex="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-iid-10.0.1_6ea01c5bc70f5d9d4234378f1f7b942b39e32c50.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\24.0.0\support-annotations-24.0.0.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
+        <dex dex="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\pre-dexed\debug\support-annotations-24.0.0_64aa9d99038afeaed57c1db724e51cc0d7edfb24.jar" />
+    </item>
+    <item
+        jar="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\libs\InMobi-6.2.1.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="b963f7433e791d8ad4223a946bed9f889cc914f8">
+        <dex dex="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\pre-dexed\debug\InMobi-6.2.1_ea8d2766f82996c1d1608abe13159097ad4fc185.jar" />
+    </item>
+    <item
+        jar="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads-lite\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="b955cb3a1ad6f1b6ff728ce1e0cd592c1717b440">
+        <dex dex="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-ads-lite-10.0.1_f8c147538ff8fae7f9deacb8d17f6dd58bff2f99.jar" />
+    </item>
+    <item
+        jar="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.0.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="3bd97cfefd783e9de1dd1c30574a6adb44b4409b">
+        <dex dex="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-24.0.0_77693ac357c61607d3b299835931df17c5a73bcf.jar" />
+    </item>
+    <item
+        jar="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\libs\AdMixer_1.4.2.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="84d3460f76dac45c6f5e09dd74c9d1a79295ef3f">
+        <dex dex="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\pre-dexed\debug\AdMixer_1.4.2_46f2f45e5a8182c2167ece979f45e8c09de527db.jar" />
+    </item>
+    <item
+        jar="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\libs\adfull_1.0.5.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="d149537fc01bcb93aaaa223e6838870289914964">
+        <dex dex="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\pre-dexed\debug\adfull_1.0.5_4e97f98dbe718b55f15a2622b36a60a11072bfce.jar" />
+    </item>
+    <item
+        jar="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\jars\libs\internal_impl-24.0.0.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
+        <dex dex="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\pre-dexed\debug\internal_impl-24.0.0_30847e46dc1b05bab768ea431047b1623dfd339b.jar" />
+    </item>
+    <item
+        jar="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
+        <dex dex="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-tasks-10.0.1_70ecccf2567a8eb65c430b5bce1699015d65e511.jar" />
+    </item>
+    <item
+        jar="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\libs\CaulySDK-3.4.15.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="1e81eb0f74e347c5723f61a8cdc6d3dfb07af5ca">
+        <dex dex="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\pre-dexed\debug\CaulySDK-3.4.15_2602a4047237be0eb6fd07e31c7c9bbea9949c0e.jar" />
+    </item>
+    <item
+        jar="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gass\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="57c2eceb8548de84509d1ebc293fedec53231f6c">
+        <dex dex="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-gass-10.0.1_561ad253e02a7d98febbdb3475c9c6cccb8a0746.jar" />
+    </item>
+    <item
+        jar="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\libs\SyrupAdSDK_3.16.0.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="e8724b7b08f0dfe4cf3f6fa81ae7bc94ed423bb6">
+        <dex dex="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\pre-dexed\debug\SyrupAdSDK_3.16.0_f9132e351731569fdb9f7fe9751f3dc635866008.jar" />
+    </item>
+    <item
+        jar="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-basement-10.0.1_230bdbcad318cdb913c72208cfa604f77507672b.jar" />
+    </item>
+    <item
+        jar="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\libs\shallweadsdk_v1.8_20160804.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="a65b1ae58f164861941abfdcaf78c2d841fb24be">
+        <dex dex="E:\1.Main\work\Android Studio\workspace\AdMixerSample\app\build\intermediates\pre-dexed\debug\shallweadsdk_v1.8_20160804_c83f649aa1d11be640d1964529f579f1e83961d8.jar" />
+    </item>
+
+</items>

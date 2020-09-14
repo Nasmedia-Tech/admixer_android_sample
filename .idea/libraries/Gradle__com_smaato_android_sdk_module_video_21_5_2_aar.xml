@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.smaato.android.sdk:module-video:21.5.2@aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-module-video-21.5.2.aar/fa924a267deb5d504019d61fd0b39576/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-module-video-21.5.2.aar/fa924a267deb5d504019d61fd0b39576/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-module-video-21.5.2.aar/fa924a267deb5d504019d61fd0b39576/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-module-video-21.5.2.aar/fa924a267deb5d504019d61fd0b39576/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

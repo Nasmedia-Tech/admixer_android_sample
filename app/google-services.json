@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "387887562360",
+    "firebase_url": "https://admixersample.firebaseio.com",
+    "project_id": "admixersample",
+    "storage_bucket": "admixersample.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:387887562360:android:24ca9b372ad86307",
+        "android_client_info": {
+          "package_name": "com.admixer.sample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "387887562360-b0b1bllmnsdj67t5m76r02l261hfcfmg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKkBiQDrTrlnXKSArAkZmUeXdpbRMzcGw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

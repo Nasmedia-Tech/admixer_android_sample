@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">387887562360-b0b1bllmnsdj67t5m76r02l261hfcfmg.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://admixersample.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">387887562360</string>
+    <string name="google_api_key" translatable="false">AIzaSyCKkBiQDrTrlnXKSArAkZmUeXdpbRMzcGw</string>
+    <string name="google_app_id" translatable="false">1:387887562360:android:24ca9b372ad86307</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCKkBiQDrTrlnXKSArAkZmUeXdpbRMzcGw</string>
+    <string name="google_storage_bucket" translatable="false">admixersample.appspot.com</string>
+    <string name="project_id" translatable="false">admixersample</string>
+</resources>

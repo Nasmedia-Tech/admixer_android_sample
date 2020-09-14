@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.smaato.android.sdk:smaato-sdk:21.5.2@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/smaato-sdk-21.5.2.aar/f1290d52043b50a6eba2496393e63b95/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/smaato-sdk-21.5.2.aar/f1290d52043b50a6eba2496393e63b95/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/smaato-sdk-21.5.2.aar/f1290d52043b50a6eba2496393e63b95/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

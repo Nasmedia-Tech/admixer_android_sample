@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: :CaulySDK-3.5.08:@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/CaulySDK-3.5.08.aar/548c45e146346275106ec109a2810865/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/CaulySDK-3.5.08.aar/548c45e146346275106ec109a2810865/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/CaulySDK-3.5.08.aar/548c45e146346275106ec109a2810865/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
