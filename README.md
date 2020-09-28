@@ -1,6 +1,7 @@
 # AdMixerSample
 
-- Admixer Android SDK
+- Admixer Android SDK Sample Project   
+- Current Version 2.3.1
 
 ## AdMixer Support Mediation Version
 
