@@ -22,7 +22,7 @@
 =============
 
 - Mopub   
-v5.13.0 에서 배너, 전면 광고 및 보상 형 광고를 하나의 컨테이너로 통합합니다.
+v5.13.0 에서 배너, 전면 광고 및 보상 형 광고를 하나의 컨테이너로 통합합니다.   
 통합 mopub-sdk-interstitial, mopub-sdk-rewarded-video -> mopub-sdk-fullscreen
 
 버전별 등록 방법
