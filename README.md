@@ -6,7 +6,7 @@
 ## AdMixer Support Mediation Version
 
 | AdNetwork | Version | Check Date | compatible | download
-|---|:---:|---:|---:|---:|
+|---|:---:|---:|:---:|---:|
 | `AdMixer` | 2.1.3 | 2020.08.24 | O | [다운로드](http://admixer.co.kr/, "download link")
 | `Adfit` | 3.4.0 | 2020.08.24 | O | [다운로드](https://github.com/adfit/adfit-android-sdk/, "download link")
 | `Admob` | 19.3.0 | 2020.08.24 | O | [다운로드](https://developers.google.com/admob/android/sdk?hl=ko/, "download link")
