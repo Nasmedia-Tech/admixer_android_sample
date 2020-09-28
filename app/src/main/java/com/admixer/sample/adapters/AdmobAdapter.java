@@ -21,13 +21,10 @@ import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.RequestConfiguration;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Arrays;
-
-import androidx.annotation.Nullable;
 
 /**
  * Admob Adapter
@@ -135,8 +132,7 @@ public class AdmobAdapter extends BaseAdAdapter {
 				adSize	= AdSize.LEADERBOARD;
 				break;
 			default :
-				adSize	= AdSize.SMART_BANNER;
-				params = new RelativeLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+				adSize	= AdSize.BANNER;
 				break;
 		}
 

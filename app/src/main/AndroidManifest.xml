@@ -16,7 +16,7 @@
 		android:supportsRtl="true"
 		tools:replace="android:label,android:allowBackup,android:icon,android:appComponentFactory">
 
-		 <!-- 광고가 삽입되는 Activity에 아래와 같이 configChanges 적용 -->
+		 <!-- 광고가 삽입되는 Activity 에 아래와 같이 configChanges 적용 -->
          <activity
             android:name=".AdMixerSampleActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
@@ -67,15 +67,16 @@
 		</activity>
 
 		<!-- For MoPub -->
-			<!-- MoPub's consent dialog -->
-			<activity android:name="com.mopub.common.privacy.ConsentDialogActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
+		<!-- MoPub SDK 버전에 따른 변경사항은 다음 링크를 참고하십시오. https://developers.mopub.com/publishers/android/changelog/-->
+		<!-- MoPub's consent dialog -->
+		<activity android:name="com.mopub.common.privacy.ConsentDialogActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
 
-			<!-- All ad formats -->
-			<activity android:name="com.mopub.common.MoPubBrowser" android:configChanges="keyboardHidden|orientation|screenSize"/>
+		<!-- All ad formats -->
+		<activity android:name="com.mopub.common.MoPubBrowser" android:configChanges="keyboardHidden|orientation|screenSize"/>
 
-			<!-- Interstitials -->
-			<activity android:name="com.mopub.mobileads.MraidVideoPlayerActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
-			<activity android:name="com.mopub.mobileads.MoPubFullscreenActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
+		<!-- Interstitials -->
+		<activity android:name="com.mopub.mobileads.MraidVideoPlayerActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
+		<activity android:name="com.mopub.mobileads.MoPubFullscreenActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
 
 	</application>
 
@@ -97,11 +98,14 @@
 	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
 	<!-- MAN(MANPLUS), Facebook -->
-	<!-- Grants the READ_PHONE_STATE permission only on devices that run
-     Android 10 (API level 29) and lower. -->
-	<uses-permission android:name="READ_PHONE_STATE"
-		android:maxSdkVersion="29" />
+	<!-- Grants the READ_PHONE_STATE permission only on devices that run Android 10 (API level 29) and lower. -->
+	<!-- 자세한 내용은 다음 링크 및 각 미디에이션 가이드를 참고하십시오. https://developer.android.com/preview/privacy/permissions?hl=ko -->
+	<!-- 1. 앱이 Android 11을 타겟팅하면, 아래와 같이 사용하십시오. -->
+	<uses-permission android:name="READ_PHONE_STATE" android:maxSdkVersion="29" />
 	<uses-permission android:name="READ_PHONE_NUMBERS" />
+
+	<!-- 2. 앱이 Android 11을 타겟팅하지 않는다면, 아래와 같이 사용하십시오. -->
+	<!-- <uses-permission android:name="READ_PHONE_STATE" /> -->
 
 	<!-- Smaato -->
 	<uses-feature android:name="android.hardware.location.network" />

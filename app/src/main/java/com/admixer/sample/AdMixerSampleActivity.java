@@ -1,13 +1,8 @@
 package com.admixer.sample;
 
 import android.app.Activity;
-import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Handler;
-import android.provider.Settings;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
@@ -22,10 +17,8 @@ import com.admixer.ads.AdView;
 import com.admixer.ads.AdViewListener;
 import com.admixer.ads.InterstitialAd;
 import com.admixer.ads.InterstitialAdListener;
-import com.admixer.ads.PopupInterstitialAdOption;
 import com.admixer.common.Logger;
 import com.admixer.common.Logger.LogLevel;
-import com.facebook.ads.AdSettings;
 import com.facebook.ads.AudienceNetworkAds;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
@@ -79,7 +72,7 @@ public class AdMixerSampleActivity extends Activity implements InterstitialAdLis
 		AdMixer.init(this, mediaKey, adunits);
 
 		// COPPA(아동보호법) 관련 항목 설정값 - 선택사항
-		// Smaato 테스트모드 광고 시 False 로 변경해야 테스트 광고 송출 가능.
+		// Smaato 의 경우 테스트 광고 요청 시 False 로 변경해야 테스트 광고 송출 가능.
 		AdMixer.setTagForChildDirectedTreatment(AdMixer.AX_TAG_FOR_CHILD_DIRECTED_TREATMENT_TRUE);
 
 		// Admob 적용 시에 SDK 초기화 호출이 필요
@@ -159,7 +152,7 @@ public class AdMixerSampleActivity extends Activity implements InterstitialAdLis
         adView1.setBackgroundColor(Color.BLACK);
 
         // Admob AdInfo
-		adInfo1.setAdapterAdInfo(AdMixer.ADAPTER_ADMOB, "adSize", "SMART_BANNER");
+		adInfo1.setAdapterAdInfo(AdMixer.ADAPTER_ADMOB, "adSize", "BANNER");
         // Cauly AdInfo
 		adInfo1.setAdapterAdInfo(AdMixer.ADAPTER_CAULY, "bannerHeight", "Fixed_50");
         // Facebook AdInfo
