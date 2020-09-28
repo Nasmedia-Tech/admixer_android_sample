@@ -4,18 +4,17 @@
 
 ## AdMixer Support Mediation Version
 
-
-| AdNetwork | Version | Check Date | compatible
-|---|:---:|---:|---:|
-| `AdMixer` | 2.1.3 | 2020.08.24 | O
-| `Adfit` | 3.4.0 | 2020.08.24 | O
-| `Admob` | 19.3.0 | 2020.08.24 | O
-| `Cauly` | 3.5.08 | 2020.08.24 | O
-| `Facebook` | 5.11.0 | 2020.08.24 | O
-| `DawinClick` | 3.16.7 | 2020.08.24 | O
-| `MANPLUS` | 107 | 2020.08.24 | O
-| `Mopub` | 5.13.1 | 2020.08.24 | O
-| `Smatto` | 21.5.2 | 2020.08.24 | O
+| AdNetwork | Version | Check Date | compatible | download
+|---|:---:|---:|---:|---:|
+| `AdMixer` | 2.1.3 | 2020.08.24 | O | [다운로드](http://admixer.co.kr/, "download link")
+| `Adfit` | 3.4.0 | 2020.08.24 | O | [다운로드](https://github.com/adfit/adfit-android-sdk/, "download link")
+| `Admob` | 19.3.0 | 2020.08.24 | O | [다운로드](https://developers.google.com/admob/android/sdk?hl=ko/, "download link")
+| `Cauly` | 3.5.08 | 2020.08.24 | O | [다운로드](https://github.com/cauly/Android-SDK/, "download link")
+| `Facebook` | 5.11.0 | 2020.08.24 | O | [다운로드](https://developers.facebook.com/docs/app-events/getting-started-app-events-android, "download link")
+| `DawinClick` | 3.16.7 | 2020.08.24 | O | [다운로드](https://click.dawin.tv/poc/#/sdk, "download link")
+| `MANPLUS` | 107 | 2020.08.24 | O | [다운로드](http://docs.meba.kr/s-plus/sdk/android/, "download link")
+| `Mopub` | 5.13.1 | 2020.08.24 | O | [다운로드](https://developers.mopub.com/publishers/android/, "download link")
+| `Smatto` | 21.5.2 | 2020.08.24 | O | [다운로드](https://www.smaato.com/resources/sdks/, "download link")
 
 
 변경사항
