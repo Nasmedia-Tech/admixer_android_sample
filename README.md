@@ -21,7 +21,7 @@
 변경사항
 =============
 
-- Mopub
+- Mopub   
 v5.13.0 에서 배너, 전면 광고 및 보상 형 광고를 하나의 컨테이너로 통합합니다.
 통합 mopub-sdk-interstitial, mopub-sdk-rewarded-video -> mopub-sdk-fullscreen
 
@@ -50,13 +50,13 @@ build.gradle
     }
 ``` 
 
-- Adfit
+- Adfit   
 2020.08.06 일자로 다음애드핏이 종료되고 카카오애드핏으로 변경 사용 시 이전해야함.
 
-- Smatto
+- Smatto   
 테스트 시 COPPA 를 False 로 두고 테스트해야 광고 송출받을 수 있음
 
-- Facebook
+- Facebook   
 AdSettings.setTestMode(true); 추가해야 테스트 가능
     
     
