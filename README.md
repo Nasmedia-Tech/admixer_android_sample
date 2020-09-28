@@ -58,5 +58,7 @@ build.gradle
 
 - Facebook   
 AdSettings.setTestMode(true); 추가해야 테스트 가능
-    
+
+- Cauly   
+SDK파일 AAR파일 변경, AndroidManifest의 android:label 을 리소스에서 참조가능한  변수로 처리
     
