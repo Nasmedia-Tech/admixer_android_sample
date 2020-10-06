@@ -1,2 +1,0 @@
-# Referenced at D:\2.AdMixer\[Android] AdMixer Release\AdMixer Android SDK\AdMixer_2.1.0_2\AdMixerSample\app\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:39
--keep class androidx.multidex.MultiDexApplication { <init>(...); }
