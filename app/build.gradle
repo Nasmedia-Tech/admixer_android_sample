@@ -51,7 +51,7 @@ dependencies {
     implementation files('libs/AdMixer_2.1.3.jar')
 
     // For Admob (선택)
-    implementation 'com.google.firebase:firebase-ads:19.4.0'
+    implementation 'com.google.firebase:firebase-ads:19.3.0'
     // For Cauly (선택)
     implementation name: 'CaulySDK-3.5.08', ext: 'aar'
     // For ManPlus (Man) (선택)

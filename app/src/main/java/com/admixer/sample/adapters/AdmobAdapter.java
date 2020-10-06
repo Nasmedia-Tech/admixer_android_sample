@@ -39,7 +39,7 @@ public class AdmobAdapter extends BaseAdAdapter {
 	boolean hasAd = false;
 
 	//adapterAdInfo
-	String[] adSizeList = {"SMART_BANNER", "BANNER", "LARGE_BANNER", "MEDIUM_RECTANGLE", "FULL_BANNER", "LEADERBOARD"};
+	String[] adSizeList = {"BANNER", "SMART_BANNER", "LARGE_BANNER", "MEDIUM_RECTANGLE", "FULL_BANNER", "LEADERBOARD"};
 	String adSize = adSizeList[0];
 
 	public String getAdapterName() {
