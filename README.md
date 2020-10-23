@@ -630,10 +630,7 @@ addInterstitialView();
 (리스너)
 @Override	
 public void onInterstitialAdShown() {
-   // (( Timer 시작
-   if(interstitialAd != null)
-   interstitialAd.closeInterstitial();
-   interstitialAd = null; ))
+   // (( Timer 시작 if(interstitialAd != null) interstitialAd.closeInterstitial(); interstitialAd = null; ))
 }
 
 @Override
