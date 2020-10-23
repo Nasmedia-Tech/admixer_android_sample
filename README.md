@@ -146,9 +146,8 @@ dependencies {
 - READ_PHONE_STATE 관련 처리   
 Android 11 부터 앱에서 전화번호를 읽을 때 사용하는 전화 권한 변경됩니다.앱이 Android 11을 타겟팅하고 다음 목록에 표시된 전화번호 API에 액세스해야 하는 경우 READ_PHONE_STATE 권한 대신 READ_PHONE_NUMBERS 권한을 요청해야 합니다. 위의 조건에 해당하신다면, 애드믹서 내 MANPLUS, Facebook 등 READ_PHONE_STATE 권한을 사용하는 미디에이션은 다음과 같이 변경해주셔야 합니다.   
 ( * 자세한 사항은 각 미디에이션 가이드를 참조하십시오.)
-
-- TelephonyManager 클래스와 TelecomManager 클래스의 getLine1Number() 메서드
-- TelephonyManager 클래스에서 지원되지 않는 getMsisdn() 메서드
+ - TelephonyManager 클래스와 TelecomManager 클래스의 getLine1Number() 메서드
+ - TelephonyManager 클래스에서 지원되지 않는 getMsisdn() 메서드
 앱에서 READ_PHONE_STATE를 선언하여 이전 목록의 메서드 이외의 메서드를 호출하는 경우 모든 Android 버전에서 READ_PHONE_STATE를 계속 요청할 수 있습니다. 그러나 이전 목록의 메서드에만 READ_PHONE_STATE 권한을 사용하는 경우 다음과 같이 매니페스트 파일을 업데이트하세요.   
    
 1. 앱이 Android 10(API 수준 29) 이하에서만 권한을 사용하도록 READ_PHONE_STATE 선언을 변경합니다.
@@ -157,6 +156,7 @@ Android 11 부터 앱에서 전화번호를 읽을 때 사용하는 전화 권�
 다음 매니페스트 선언 스니펫이 이 프로세스를 보여줍니다.
 ```
 [AndroidManifest.xml]
+
 <manifest>
    <!-- Grants the READ_PHONE_STATE permission only on devices that run Android 10 (API level 29) and lower. -->
    <uses-permission android:name="READ_PHONE_STATE“ android:maxSdkVersion="29" />
@@ -166,19 +166,17 @@ Android 11 부터 앱에서 전화번호를 읽을 때 사용하는 전화 권�
 
 ### 3.2 Google Play targetAPI 요구사항 충족하기 [Link](https://developer.android.com/distribute/best-practices/develop/target-sdk?hl=ko)   
 
-APK를 업로드하는 경우 Google Play의 타겟 API 수준 요구사항을 충족해야 합니다.   
-새 앱은 Android 10(API 수준 29) 이상을 타겟팅해야 하며 앱 업데이트는 Android 9(API 수준 28) 이상을 타겟팅해야 합니다.   
-참고: 2020년 11월 2일부터 앱 업데이트는 Android 10(API 수준 29) 이상을 타겟팅해야 합니다.   
-새로운 Android 버전이 출시될 때마다 보안 및 성능이 크게 개선되며 전반적으로 Android 사용자 환경이 향상됩니다.   
-이러한 변경사항 중 일부는 targetSdkVersion 매니페스트 속성(타겟 API 수준이라고도 함)을 통해 지원을 명시적으로 선언한 앱에만 적용됩니다.   
+- APK를 업로드하는 경우 Google Play의 타겟 API 수준 요구사항을 충족해야 합니다.   
+  - 새 앱은 Android 10(API 수준 29) 이상을 타겟팅해야 하며 앱 업데이트는 Android 9(API 수준 28) 이상을 타겟팅해야 합니다.   
+  - 참고: 2020년 11월 2일부터 앱 업데이트는 Android 10(API 수준 29) 이상을 타겟팅해야 합니다.   
+  - 새로운 Android 버전이 출시될 때마다 보안 및 성능이 크게 개선되며 전반적으로 Android 사용자 환경이 향상됩니다.   
+  - 이러한 변경사항 중 일부는 targetSdkVersion 매니페스트 속성(타겟 API 수준이라고도 함)을 통해 지원을 명시적으로 선언한 앱에만 적용됩니다.   
+  
+ - 최신 API 수준을 타겟팅하도록 앱을 구성하면 사용자가 이러한 개선사항의 혜택을 받을 수 있으며, 이전 Android 버전에서도 계속해서 앱을 실행할 수 있습니다. 최신 API 수준을 타겟팅하면 앱에서 플랫폼의 최신 기능을 활용해 사용자 환경을 개선할 수 있습니다. 또한 Android 10(API 수준 29) 현재 앱에서 Android 5.1(API 수준 22) 이하를 타겟팅하는 경우 사용자가 처음으로 앱을 시작할 때 경고가 표시됩니다.
    
-최신 API 수준을 타겟팅하도록 앱을 구성하면 사용자가 이러한 개선사항의 혜택을 받을 수 있으며, 이전 Android 버전에서도 계속해서 앱을 실행할 수 있습니다. 최신 API 수준을 타겟팅하면 앱에서 플랫폼의 최신 기능을 활용해 사용자 환경을 개선할 수 있습니다. 또한 Android 10(API 수준 29) 현재 앱에서 Android 5.1(API 수준 22) 이하를 타겟팅하는 경우 사용자가 처음으로 앱을 시작할 때 경고가 표시됩니다.
+ - 이 문서에서는 타겟 API 수준을 업데이트하여 Google Play 요구사항을 충족할 때 알아 두어야 하는 중요 사항에 관해 다룹니다.
+ - 참고: Gradle 파일에 매니페스트 항목이 포함되어 있는 경우 빌드 구성의 설명대로 앱의 Gradle 파일에서 targetSdkVersion의 현재 값을 확인하거나 변경할 수 있습니다. 또는 <uses-sdk> 매니페스트 요소 문서에 설명되어 있는 대로 매니페스트 파일에 있는 android:targetSdkVersion 속성을 사용할 수 있습니다.
    
-이 문서에서는 타겟 API 수준을 업데이트하여 Google Play 요구사항을 충족할 때 알아 두어야 하는 중요 사항에 관해 다룹니다.
-   
-참고: Gradle 파일에 매니페스트 항목이 포함되어 있는 경우 빌드 구성의 설명대로 앱의 Gradle 파일에서 targetSdkVersion의 현재 값을 확인하거나 변경할 수 있습니다. 또는 <uses-sdk> 매니페스트 요소 문서에 설명되어 있는 대로 매니페스트 파일에 있는 android:targetSdkVersion 속성을 사용할 수 있습니다.
-   
-
 ### 3-3 Android 9 (Pie) 업데이트에 따른 추가 설정 (Required, 필수)
 
 ClearText HTTP traffic to not permitted 관련 처리   
@@ -228,6 +226,7 @@ AndroidManifest.xml 적용 사항
 
 ```
 [AndroidManifest.xml]
+
 <manifest>
 
    //...
@@ -650,6 +649,7 @@ public void onInterstitialAdClosed(InterstitialAd interstitialAd) {
 
 ## Step 6. Ad network 별 추가 광고정보 설정
 - setAdapterAdInfo API는 AdNetwork 별로 제공되는 옵션을 설정하기 위한 API입니다.
+
 ```
 [지원 옵션]
 
@@ -706,41 +706,41 @@ adInfo.setAdapterAdInfo(AdMixer.ADAPTER_SMAATO, "adSize", "XX_LARGE_320x50");
 
 ## Step 8. 자주하는 질문 (Q&A)
 
-- 1. 문제 확인을 위한 로그는 없나요?
+* 문제 확인을 위한 로그는 없나요?
   - Logger.setLogLevel(Logger.LogLevel.Verbose);
   - 위의 코드를 넣으시면 LogCat에 상세한 로그를 확인하실 수 있습니다. 문제 발생 시 해당 로그를 전달해 주시면 좀 더 정확한 원인 파악에 도움이 됩니다.
   
-- 2. 하나의 App에 복수 개의 Media Key를 적용해도 되나요?
+* 하나의 App에 복수 개의 Media Key를 적용해도 되나요?
   - 한 개의 App에는 한 개의 Media Key만 적용하셔야 합니다.
   
-- 3. 동일한 Adunit ID로 여러 개의 광고객체를 생성해도 되나요?
+* 동일한 Adunit ID로 여러 개의 광고객체를 생성해도 되나요?
   - 한 개의 Adunit ID는 한 개의 광고객체에서만 사용가능합니다.
   
-- 4. 광고가 나오지 않습니다.
+* 광고가 나오지 않습니다.
   - 먼저 Android Studio의 Logcat에 표시되는 로그를 확인해 주시기 바랍니다.
   - AdMixer 사이트에서 Ad Network 노출 설정 및 광고 키 설정에 문제가 없는지 확인 바랍니다.
   - AdMixer 객체를 통해 초기화 호출을 해주셨는지 확인 부탁드립니다. 초기화 시에 설정한 Media Key 및 adunit ID 배열과 일치하는 정보를 가진 광고객체만 정상적으로 동작합니다.
   - Adunit 생성 시에 입력한 fullscreen 정보에 따라서 사용가능한 광고객체가 다릅니다. banner 객체는 fullscreen이 off 일 때, interstitial객체는 fullscreen이 on 일 때 각각 사용할 수 있습니다.
   
-- 5. Adunit에 설정한 사이즈와 다른 사이즈의 광고가 노출됩니다
+* Adunit에 설정한 사이즈와 다른 사이즈의 광고가 노출됩니다
   - Adunit에 설정한 사이즈값은 admixer와 housead의 경우는 내부적으로 사이즈가 보장되지만, 타 Ad Network사의 경우, 해당 사이즈에 맞는 지면을 생성하셔서 전략에 키값을 설정하시고, 사이즈옵션이 있다면 코드상에서 setAdapterAdInfo를 통해 개별적으로 설정하셔야 정상 노출이 보장됩니다.
   
-- 6. 한 App내에서 많은 adunit을 사용해도 되나요?
+* 한 App내에서 많은 adunit을 사용해도 되나요?
   - 사용 가능한 adunit수에 제한은 없지만, 광고 객체를 설정하고 로딩하는데에 많은 메모리가 할당되기 때문에 앱 성능을 위해서 많은 광고객체 호출은 지양하시는 것이 좋습니다. 
   
-- 7. 빌드 시에 AndroidManifest.xml에서 오류가 발생합니다.
+* 빌드 시에 AndroidManifest.xml에서 오류가 발생합니다.
   - AndroidManifest.xml 파일의 형식이 맞지 않은 경우 오류가 발생할 수 있습니다.
   
-- 8. 광고 클릭 시 프로그램이 비정상 종료가 됩니다.
+* 광고 클릭 시 프로그램이 비정상 종료가 됩니다.
   - AndroidManifest.xml에 광고 플랫폼 별 Activity 설정이 제대로 되어 있지 않은 경우일 수 있습니다. AndroidManifest.xml 설정을 확인해 주시기 바랍니다.
   
-- 9. 라이브러리 크기를 줄일 수 있습니까?
+* 라이브러리 크기를 줄일 수 있습니까?
   - 모든 광고를 적용하시는 편이 표시할 광고가 없는 상황을 줄일 수 있기 때문에 가급적이면 모든 광고를 포함하시는 편이 좋겠지만 프로그램 크기가 커져서 문제가 되신다면 꼭 필요한 Ad Network를 결정하시고 불필요한 adapter를 삭제하시고, 필요한  Ad Network adapter만 등록하시면 됩니다.
   
-- 10. 전면 광고가 자주 나오지 않습니다.
+* 전면 광고가 자주 나오지 않습니다.
   - 전면 광고의 경우 배너 광고보다 광고 물량이 적어 설정하신  Ad Network가 적은 경우 광고가 나오지 않을 확률도 그 만큼 커집니다.
   
-- 11. Banner광고 좌우 여백 부분 배경색을 바꿀 수 있나요?
+* Banner광고 좌우 여백 부분 배경색을 바꿀 수 있나요?-
   - AdView의 배경 혹은 AdView의 부모 View의 배경색을 설정하시면 됩니다.
 
 
