@@ -19,7 +19,7 @@
 
 ## Development Environment
 - Android Studio 권장 (Recommended)
-- targetSdkVersion 29 이상 권장 (to "29" or higher) (2020.11.02 부터 앱 업데이트 시 필수, [Link](https://developer.android.com/distribute/best-practices/develop/target-sdk?hl=ko))
+- targetSdkVersion 29 이상 권장 (2020.11.02 부터 앱 업데이트 시 필수, [Link](https://developer.android.com/distribute/best-practices/develop/target-sdk?hl=ko))
 
 How to use ?
 =============
@@ -28,6 +28,7 @@ How to use ?
 
 ```
 [build.gradle]
+
 android {
     //...
 
@@ -62,22 +63,20 @@ repositories {
 
 ```
 ##### (자세한 사항 각 미디에이션 가이드 및 샘플 프로젝트 소스코드를 참조하십시오.)
-##### Please refer to each mediation guide and sample project source code for details.
 
 ## Step 2. Add Library
 
 ### 2-1. File library
 
-#### (Required, 필수)   
+#### (필수)   
 - libs/AdMixer_x.y.z.jar   
 
-#### (선택, Options)   
+#### (선택)   
 - libs/CaulySDK-x.y.z.arr   
 - libs/DawinClickSDK_x.y.z.jar   
 - libs/mplus_sdk.jar   
 
 ##### (자세한 사항 각 미디에이션 가이드 및 샘플 프로젝트 소스코드를 참조하십시오.)
-##### Please refer to each mediation guide and sample project source code for details.
 
 ### 2-2. Gradle Library
 ```
@@ -88,9 +87,9 @@ repositories {
 repositories {
     //...
     
-    // for Adfit (Options)
+    // for Adfit (선택)
     maven { url 'http://devrepo.kakao.com:8088/nexus/content/groups/public/' }
-    // For smaato (Options)
+    // For smaato (선택)
     maven { url "https://s3.amazonaws.com/smaato-sdk-releases/" }
     
     //...
@@ -99,37 +98,37 @@ repositories {
 dependencies {
     //...
     
-    // 공통 (Required, 필수)
+    // 공통 (필수)
     implementation 'com.android.support:multidex:1.0.3'
     implementation 'com.google.gms:google-services:4.3.4'
     
-    // For AdMixer (Required, 필수)
+    // For AdMixer (필수)
     implementation files('libs/AdMixer_2.1.3.jar')
 
-    // For Admob (선택, Options)
+    // For Admob (선택)
     implementation 'com.google.firebase:firebase-ads:19.3.0'
     
-    // For Cauly (선택, Options)
+    // For Cauly (선택)
     implementation name: 'CaulySDK-3.5.08', ext: 'aar'
-    // For ManPlus (Man) (선택, Options)
+    // For ManPlus (Man) (선택)
     implementation files('libs/mplus_sdk.jar')
-    // For DawinClick (선택, Options)
+    // For DawinClick (선택)
     implementation files('libs/DawinClickSDK_3.16.7.jar')
 
-    // For Facebook (선택, Options)
+    // For Facebook (선택)
     implementation "com.facebook.android:audience-network-sdk:5.11.0"
     implementation "com.android.support:support-annotations:28.0.0"
 
-    // For Adfit (선택, Options)
+    // For Adfit (선택)
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.72"
     implementation "com.kakao.adfit:ads-base:3.4.0"
 
-    // For Mopub (선택, Options)
+    // For Mopub (선택)
     implementation('com.mopub:mopub-sdk:5.13.1@aar') {
         transitive = true
     }
 
-    // For Smaato (선택, Options)
+    // For Smaato (선택)
     implementation 'com.smaato.android.sdk:smaato-sdk:21.5.2'
 }
 //...
@@ -137,21 +136,22 @@ dependencies {
 ```
 
 ##### (자세한 사항 각 미디에이션 가이드 및 샘플 프로젝트 소스코드를 참조하십시오.)
-##### Please refer to each mediation guide and sample project source code for details.
-
 
 ## Step 3. Project Setting
 
-### 3-1 Android 11 업데이트에 따른 READ_PHONE_STATE 추가 설정 (Options, 옵션) [Link](https://developer.android.com/preview/privacy/permissions?hl=ko)   
+### 3-1 Android 11 업데이트에 따른 READ_PHONE_STATE 추가 설정 (옵션) [Link](https://developer.android.com/preview/privacy/permissions?hl=ko)   
 - READ_PHONE_STATE 관련 처리   
-Android 11 부터 앱에서 전화번호를 읽을 때 사용하는 전화 권한 변경됩니다.앱이 Android 11을 타겟팅하고 다음 목록에 표시된 전화번호 API에 액세스해야 하는 경우 READ_PHONE_STATE 권한 대신 READ_PHONE_NUMBERS 권한을 요청해야 합니다. 위의 조건에 해당하신다면, 애드믹서 내 MANPLUS, Facebook 등 READ_PHONE_STATE 권한을 사용하는 미디에이션은 다음과 같이 변경해주셔야 합니다.   
-( * 자세한 사항은 각 미디에이션 가이드를 참조하십시오.)
+  - Android 11 부터 앱에서 전화번호를 읽을 때 사용하는 전화 권한 변경됩니다.
+  - 앱이 Android 11을 타겟팅하고 다음 목록에 표시된 전화번호 API에 액세스해야 하는 경우 READ_PHONE_STATE 권한 대신 READ_PHONE_NUMBERS 권한을 요청해야 합니다. 
+  - 위의 조건에 해당하신다면, 애드믹서 내 MANPLUS, Facebook 등 READ_PHONE_STATE 권한을 사용하는 미디에이션은 다음과 같이 변경해주셔야 합니다.
   - TelephonyManager 클래스와 TelecomManager 클래스의 getLine1Number() 메서드
   - TelephonyManager 클래스에서 지원되지 않는 getMsisdn() 메서드
 앱에서 READ_PHONE_STATE를 선언하여 이전 목록의 메서드 이외의 메서드를 호출하는 경우 모든 Android 버전에서 READ_PHONE_STATE를 계속 요청할 수 있습니다. 그러나 이전 목록의 메서드에만 READ_PHONE_STATE 권한을 사용하는 경우 다음과 같이 매니페스트 파일을 업데이트하세요.   
    
 1. 앱이 Android 10(API 수준 29) 이하에서만 권한을 사용하도록 READ_PHONE_STATE 선언을 변경합니다.
 2. READ_PHONE_NUMBERS 권한을 추가합니다.
+
+##### (자세한 사항 각 미디에이션 가이드 및 샘플 프로젝트 소스코드를 참조하십시오.)
 
 다음 매니페스트 선언 스니펫이 이 프로세스를 보여줍니다.
 ```
@@ -177,15 +177,17 @@ Android 11 부터 앱에서 전화번호를 읽을 때 사용하는 전화 권�
  - 이 문서에서는 타겟 API 수준을 업데이트하여 Google Play 요구사항을 충족할 때 알아 두어야 하는 중요 사항에 관해 다룹니다.
  - 참고: Gradle 파일에 매니페스트 항목이 포함되어 있는 경우 빌드 구성의 설명대로 앱의 Gradle 파일에서 targetSdkVersion의 현재 값을 확인하거나 변경할 수 있습니다. 또는 <uses-sdk> 매니페스트 요소 문서에 설명되어 있는 대로 매니페스트 파일에 있는 android:targetSdkVersion 속성을 사용할 수 있습니다.
    
-### 3-3 Android 9 (Pie) 업데이트에 따른 추가 설정 (Required, 필수)
+### 3-3 Android 9 (Pie) 업데이트에 따른 추가 설정 (필수)
 
 - ClearText HTTP traffic to not permitted 관련 처리   
- - targetSdkVersion 28 부터 네트워크 통신 시 암호화 되지 않은 HTTP통신이 차단되도록 기본설정이 변경되었습니다. 애드믹서 내 모든 미디에이션과 고수익광고가 정상동작하기 위해서는 프로젝트 내 설정값 추가를 통해서 HTTP 통신을 허용해주셔야 하며, 방법은 아래와 같습니다.   
+ - targetSdkVersion 28 부터 네트워크 통신 시 암호화 되지 않은 HTTP통신이 차단되도록 기본설정이 변경되었습니다.
+ - 애드믹서 내 모든 미디에이션과 고수익광고가 정상동작하기 위해서는 프로젝트 내 설정값 추가를 통해서 HTTP 통신을 허용해주셔야 하며, 방법은 아래와 같습니다.   
 : AndroidManifest.xml 파일에서 application 항목의 속성값으로 usesCleartextTraffic을 true로 설정해야 합니다.   
 (Android 9 부터 해당값이 default로 false 설정되어 HTTP 통신이 제한됩니다.)   
 
 ```
 [AndroidManifest.xml]
+
 <manifest>
     //...
     
@@ -201,7 +203,7 @@ Android 11 부터 앱에서 전화번호를 읽을 때 사용하는 전화 권�
 </manifest> 
 ```
 
-### 3-4 Google Play Service 적용 (Required, 필수)
+### 3-4 Google Play Service 적용 (필수)
  
 - AdMixer를 사용하시기 위해서는 Google Play Service를 적용하셔야 합니다.   
 Google Play Service 적용 방법은 다음과 같습니다.   
@@ -223,7 +225,7 @@ AndroidManifest.xml 적용 사항
 
 
 ### 3-5 Update Your Android Manifest For Mediation Library (AndroidManifest.xml 설정)
-
+- 아래는 각 광고 플랫폼 별로 필요한 권한 설정입니다. 적용하신 라이브러리에 맞게 권한을 추가해 주시면 됩니다. 
 ```
 [AndroidManifest.xml]
 
@@ -263,7 +265,7 @@ AndroidManifest.xml 적용 사항
    
    //...
    
-   <!-- Required, 필수 -->
+   <!-- 필수 -->
    <activity
       android:name="Show ads your Activity"
       android:hardwareAccelerated="true"
@@ -321,11 +323,11 @@ AndroidManifest.xml 적용 사항
 ```
 
 ##### (자세한 사항 각 미디에이션 가이드 및 샘플 프로젝트 소스코드를 참조하십시오.)
-##### Please refer to each mediation guide and sample project source code for details.
+
    
 ## Step 4. Initialize ( 모바일 광고 초기화 )   
-- AdMixer 객체를 통해 반드시 1회 초기화 호출이 필요합니다.   
-AdMixer 객체를 통해 필요한 adapter들을 등록해야 합니다.
+- AdMixer 객체를 통해 반드시 1회 초기화 호출이 필요합니다.
+- AdMixer 객체를 통해 필요한 adapter들을 등록해야 합니다.
 
 ```
 [YourApplication]
@@ -433,9 +435,8 @@ void onPause() {
 - 다음과 같이 Layout XML 파일에 광고를 추가하실 수도 있습니다.
 
 ```
-[Example]
-
 [main.xml]
+
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width=“match_parent"    
@@ -453,7 +454,8 @@ void onPause() {
                 
 </LinearLayout>
 
-[LayoutSampleActivity.java Example]
+[LayoutSampleActivity.java]
+
 public class LayoutSampleActivity extends Activity {   
    @Override
    public void onCreate(Bundle savedInstanceState) {        
@@ -490,7 +492,6 @@ public class AdMixerSampleActivity extends Activity implements AdViewListener {
 ```
 
 ##### (자세한 사항 각 미디에이션 가이드 및 샘플 프로젝트 소스코드를 참조하십시오.)
-##### Please refer to each mediation guide and sample project source code for details.
 
 
 ## Step 5. Interstitial 광고(전면광고) 추가
@@ -516,7 +517,9 @@ public class AdMixerSampleActivity extends Activity implements AdViewListener {
 - 유의 사항
   - 광고 로딩이 성공한 이후 지나치게 시간이 많이 지나가면 showInterstitial()을 호출했을 때에 제대로 광고가 표시되지 않을 수 있습니다. 
   - showInterstitial()을 호출하지 않으면 광고가 표시되지 않습니다.
-  - loadInterstitial()을 호출하고 일정시간이 지나면 광고가 노출이 되어도 유효노출로 처리되지 않는 경우가 있습니다. 이 경우는 애드네트워크별로 다르므로, 해당 애드네트워크사에 확인하여  loadInterstitial() 후 적절한 타임아웃을 걸어서 재호출 하는 방식으로 사용하시기 바랍니다. 애드네트워크별로 최소호출간격이 있는 경우도 있으므로, 적당한 타임아웃을 설정하시기 바랍니다. (ex. AdMob 광고노출인증유효시간 20분)
+  - loadInterstitial()을 호출하고 일정시간이 지나면 광고가 노출이 되어도 유효노출로 처리되지 않는 경우가 있습니다. 
+  - 이 경우는 애드네트워크별로 다르므로, 해당 애드네트워크사에 확인하여 loadInterstitial() 후 적절한 타임아웃을 걸어서 재호출 하는 방식으로 사용하시기 바랍니다. 
+  - 애드네트워크별로 최소호출간격이 있는 경우도 있으므로, 적당한 타임아웃을 설정하시기 바랍니다. (ex. AdMob 광고노출인증유효시간 20분)
 
 지원 AdNetwork : Admob, Cauly, DawinClick(SyrupAd, T-ad), Facebook, Mopub
 
@@ -581,8 +584,6 @@ adInfo.setInterstitialAdType(InterstitialAdType.Popup, adConfig);
 
 
 ##### (자세한 사항 각 미디에이션 가이드 및 샘플 프로젝트 소스코드를 참조하십시오.)
-##### Please refer to each mediation guide and sample project source code for details.
-
 
 ### 5-3 Interstitial 광고(전면광고) 추가 - 이벤트 핸들러
 - 다음은 전면광고에서 발생하는 이벤트를 Activity에서 받기 위해 InterstitialAdListener 인터페이스를 구현한 것입니다.
@@ -641,7 +642,6 @@ public void onInterstitialAdClosed(InterstitialAd interstitialAd) {
 ```
 
 ##### (자세한 사항 각 미디에이션 가이드 및 샘플 프로젝트 소스코드를 참조하십시오.)
-##### Please refer to each mediation guide and sample project source code for details.
 
 
 ## Step 6. Ad network 별 추가 광고정보 설정
@@ -652,38 +652,38 @@ public void onInterstitialAdClosed(InterstitialAd interstitialAd) {
 
 // For Admob
 adInfo.setAdapterAdInfo(AdMixer.ADAPTER_ADMOB, "adSize", "BANNER");
-// AdMob 배너 종류 설정 
-// BANNER, SMART_BANNER, LARGE_BANNER, MEDIUM_RECTANGLE, FULL_BANNER, LEADERBOARD
-// Default : "BANNER"
+* AdMob 배너 종류 설정 
+- BANNER, SMART_BANNER, LARGE_BANNER, MEDIUM_RECTANGLE, FULL_BANNER, LEADERBOARD
+- Default : "BANNER"
 
 // For Cauly
 adInfo.setAdapterAdInfo(AdMixer.ADAPTER_CAULY, "bannerHeight", "Proportional");
-// Cauly 배너 종류 설정
-// ("Fixed_50" – 320*50 고정사이즈 배너 / "Proportional" – 스크린 세로길이의 10% 사이즈 배너 [기본값] )
-// Default : "Fixed_50"
+* Cauly 배너 종류 설정
+- ("Fixed_50" – 320*50 고정사이즈 배너 / "Proportional" – 스크린 세로길이의 10% 사이즈 배너 [기본값] )
+- Default : "Fixed_50"
 
 // For Facebook
 adInfo.setAdapterAdInfo(AdMixer.ADAPTER_FACEBOOK, "adSize", "BANNER_HEIGHT_50");
-// facebook 배너 종류 설정
-// BANNER_HEIGHT_50, BANNER_HEIGHT_90, RECTANGLE_HEIGHT_250
-// Default : "BANNER_HEIGHT_50"
+* facebook 배너 종류 설정
+- BANNER_HEIGHT_50, BANNER_HEIGHT_90, RECTANGLE_HEIGHT_250
+- Default : "BANNER_HEIGHT_50"
 
 // For Mopub
 adInfo.setAdapterAdInfo(AdMixer.ADAPTER_MOPUB, "adSize", "MATCH_VIEW");
-// mopub 배너 종류 설정
-// MATCH_VIEW, HEIGHT_50, HEIGHT_90, HEIGHT_250, HEIGHT_280
-// Default : "MATCH_VIEW"
+* mopub 배너 종류 설정
+- MATCH_VIEW, HEIGHT_50, HEIGHT_90, HEIGHT_250, HEIGHT_280
+- Default : "MATCH_VIEW"
 
 // For Smaato
 adInfo.setAdapterAdInfo(AdMixer.ADAPTER_SMAATO, "adSize", "XX_LARGE_320x50");
-// smaato 배너 종류 설정
-// XX_LARGE_320x50, MEDIUM_RECTANGLE_300x250, LEADERBOARD_728x90, SKYSCRAPER_120x600
-// Default : "XX_LARGE_320x50"
+* smaato 배너 종류 설정
+- XX_LARGE_320x50, MEDIUM_RECTANGLE_300x250, LEADERBOARD_728x90, SKYSCRAPER_120x600
+- Default : "XX_LARGE_320x50"
 
 ```
 
 ##### (자세한 사항 각 미디에이션 가이드 및 샘플 프로젝트 소스코드를 참조하십시오.)
-##### Please refer to each mediation guide and sample project source code for details.
+
 
 ## Step 7. Proguard 설정
 - 난독화를 위해 proguard를 설정하신 경우에는 앱 실행 시 광고가 나오지 않을 수 있습니다.   이를 위해서는 다음의 설정 내용을 proguard 파일에 추가해 주시면 됩니다. 
@@ -698,7 +698,6 @@ adInfo.setAdapterAdInfo(AdMixer.ADAPTER_SMAATO, "adSize", "XX_LARGE_320x50");
 ```
 
 ##### (자세한 사항 각 미디에이션 가이드 및 샘플 프로젝트 소스코드를 참조하십시오.)
-##### Please refer to each mediation guide and sample project source code for details.
 
 
 ## Step 8. 자주하는 질문 (Q&A)
