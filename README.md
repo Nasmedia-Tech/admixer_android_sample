@@ -329,7 +329,8 @@ AndroidManifest.xml 적용 사항
 AdMixer 객체를 통해 필요한 adapter들을 등록해야 합니다.
 
 ```
-[YourApplication Example]
+[YourApplication]
+
 public class YourApplication extends Application {
    void onCreate(Bundle savedInstanceState) {	
       super.onCreate(savedInstanceState);
@@ -383,7 +384,8 @@ public class YourApplication extends Application {
 - 아래 코드는 Banner 광고를 RelativeLayout에 추가한 예제입니다.
 
 ```
-[Example]
+[AdMixerSampleActivity.java]
+
 AdView adView;
 
 void addBannerView() {	
@@ -434,7 +436,7 @@ void onPause() {
 ```
 [Example]
 
-[main.xml example]
+[main.xml]
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width=“match_parent"    
@@ -472,7 +474,7 @@ public class LayoutSampleActivity extends Activity {
 
 
 ```
-[Example]
+[AdMixerSampleActivity.java]
 
 public class AdMixerSampleActivity extends Activity implements AdViewListener {
    @Override	
@@ -521,7 +523,7 @@ public class AdMixerSampleActivity extends Activity implements AdViewListener {
 
 - 아래 코드는 Interstitial 광고를 RelativeLayout에 추가한 예제입니다.
 ```
-[Example]
+[AdMixerSampleActivity.java]
 
 void addInterstitialAdView() {    	
    // adunit id 값 설정
@@ -556,7 +558,8 @@ void onDestroy() {
 - 팝업형 전면광고 설정코드 (원하시는 조건만 추가하시면 됩니다.)
 
 ```
-[Example]
+[AdMixerSampleActivity.java]
+
 // 팝업형 전면광고 세부설정을 원하시면 아래 PopupInterstitialAdOption 설정
 PopupInterstitialAdOption adConfig = new PopupInterstitialAdOption();
 // 팝업형 전면광고 노출 상태에서 뒤로가기 버튼 방지 (true : 비활성화, false : 활성화)
@@ -587,7 +590,7 @@ adInfo.setInterstitialAdType(InterstitialAdType.Popup, adConfig);
 - InterstitialAdViewListener 인터페이스를 구현한 객체만이 InterstitialAd 의 setInterstitialAdListener 메소드의 파라메터로 지정되어 이벤트를 받을 수 있습니다.
 
 ```
-[Example]
+[AdMixerSampleActivity.java]
 
 public class AdMixerSampleActivity extends Activity implements InterstitialAdListener {
    @Override // 광고 수신
@@ -619,7 +622,7 @@ public class AdMixerSampleActivity extends Activity implements InterstitialAdLis
 - 지원 AdNetwork : Admixer, Cauly, DawinClick(SyrupAd, T-ad), HouseAd (미지원 AdNetwork는 Skip)
 
 ```
-[Example]
+[AdMixerSampleActivity.java]
 
 (변수 선언 부)
 InterstitialAd interstitialAd;
@@ -690,7 +693,7 @@ adInfo.setAdapterAdInfo(AdMixer.ADAPTER_SMAATO, "adSize", "XX_LARGE_320x50");
    (타 Ad Network의 proguard설정은 해당 네트워크사의 가이드를 참조 부탁드립니다.)
 
 ```
-[xxxxxx-yyyyy.pro Example]
+[xxxxxx-yyyyy.pro]
 
 # AdMixer Setting
 -keep class com.admixer.** { *; }
@@ -703,41 +706,41 @@ adInfo.setAdapterAdInfo(AdMixer.ADAPTER_SMAATO, "adSize", "XX_LARGE_320x50");
 
 ## Step 8. 자주하는 질문 (Q&A)
 
-1. 문제 확인을 위한 로그는 없나요?
+- 1. 문제 확인을 위한 로그는 없나요?
   - Logger.setLogLevel(Logger.LogLevel.Verbose);
   - 위의 코드를 넣으시면 LogCat에 상세한 로그를 확인하실 수 있습니다. 문제 발생 시 해당 로그를 전달해 주시면 좀 더 정확한 원인 파악에 도움이 됩니다.
   
-2. 하나의 App에 복수 개의 Media Key를 적용해도 되나요?
+- 2. 하나의 App에 복수 개의 Media Key를 적용해도 되나요?
   - 한 개의 App에는 한 개의 Media Key만 적용하셔야 합니다.
   
-3. 동일한 Adunit ID로 여러 개의 광고객체를 생성해도 되나요?
+- 3. 동일한 Adunit ID로 여러 개의 광고객체를 생성해도 되나요?
   - 한 개의 Adunit ID는 한 개의 광고객체에서만 사용가능합니다.
   
-4. 광고가 나오지 않습니다.
+- 4. 광고가 나오지 않습니다.
   - 먼저 Android Studio의 Logcat에 표시되는 로그를 확인해 주시기 바랍니다.
   - AdMixer 사이트에서 Ad Network 노출 설정 및 광고 키 설정에 문제가 없는지 확인 바랍니다.
   - AdMixer 객체를 통해 초기화 호출을 해주셨는지 확인 부탁드립니다. 초기화 시에 설정한 Media Key 및 adunit ID 배열과 일치하는 정보를 가진 광고객체만 정상적으로 동작합니다.
   - Adunit 생성 시에 입력한 fullscreen 정보에 따라서 사용가능한 광고객체가 다릅니다. banner 객체는 fullscreen이 off 일 때, interstitial객체는 fullscreen이 on 일 때 각각 사용할 수 있습니다.
   
-5. Adunit에 설정한 사이즈와 다른 사이즈의 광고가 노출됩니다
+- 5. Adunit에 설정한 사이즈와 다른 사이즈의 광고가 노출됩니다
   - Adunit에 설정한 사이즈값은 admixer와 housead의 경우는 내부적으로 사이즈가 보장되지만, 타 Ad Network사의 경우, 해당 사이즈에 맞는 지면을 생성하셔서 전략에 키값을 설정하시고, 사이즈옵션이 있다면 코드상에서 setAdapterAdInfo를 통해 개별적으로 설정하셔야 정상 노출이 보장됩니다.
   
-6. 한 App내에서 많은 adunit을 사용해도 되나요?
+- 6. 한 App내에서 많은 adunit을 사용해도 되나요?
   - 사용 가능한 adunit수에 제한은 없지만, 광고 객체를 설정하고 로딩하는데에 많은 메모리가 할당되기 때문에 앱 성능을 위해서 많은 광고객체 호출은 지양하시는 것이 좋습니다. 
   
-7. 빌드 시에 AndroidManifest.xml에서 오류가 발생합니다.
+- 7. 빌드 시에 AndroidManifest.xml에서 오류가 발생합니다.
   - AndroidManifest.xml 파일의 형식이 맞지 않은 경우 오류가 발생할 수 있습니다.
   
-8. 광고 클릭 시 프로그램이 비정상 종료가 됩니다.
+- 8. 광고 클릭 시 프로그램이 비정상 종료가 됩니다.
   - AndroidManifest.xml에 광고 플랫폼 별 Activity 설정이 제대로 되어 있지 않은 경우일 수 있습니다. AndroidManifest.xml 설정을 확인해 주시기 바랍니다.
   
-9. 라이브러리 크기를 줄일 수 있습니까?
+- 9. 라이브러리 크기를 줄일 수 있습니까?
   - 모든 광고를 적용하시는 편이 표시할 광고가 없는 상황을 줄일 수 있기 때문에 가급적이면 모든 광고를 포함하시는 편이 좋겠지만 프로그램 크기가 커져서 문제가 되신다면 꼭 필요한 Ad Network를 결정하시고 불필요한 adapter를 삭제하시고, 필요한  Ad Network adapter만 등록하시면 됩니다.
   
-10. 전면 광고가 자주 나오지 않습니다.
+- 10. 전면 광고가 자주 나오지 않습니다.
   - 전면 광고의 경우 배너 광고보다 광고 물량이 적어 설정하신  Ad Network가 적은 경우 광고가 나오지 않을 확률도 그 만큼 커집니다.
   
-11. Banner광고 좌우 여백 부분 배경색을 바꿀 수 있나요?
+- 11. Banner광고 좌우 여백 부분 배경색을 바꿀 수 있나요?
   - AdView의 배경 혹은 AdView의 부모 View의 배경색을 설정하시면 됩니다.
 
 
