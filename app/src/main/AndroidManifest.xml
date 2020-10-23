@@ -6,6 +6,36 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	xmlns:ads="http://schemas.android.com/apk/res-auto">
 
+	<!-- Common, AdMob, Cauly, Facebook, Adfit(adam), Dawin Click(SyrupAd, T-ad), MAN(MANPLUS), Mopub, Smaato -->
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<!-- Common, AdMob, Cauly, Facebook, Adfit(adam), Dawin Click(SyrupAd, T-ad), MAN(MANPLUS), Mopub, Smaato -->
+	<uses-permission android:name="android.permission.INTERNET" />
+
+	<!-- Dawin Click(SyrupAd, T-ad) -->
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+	<!-- Facebook -->
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+	<!-- MAN(MANPLUS), Smaato(optional) -->
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+	<!-- MAN(MANPLUS) -->
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+	<!-- MAN(MANPLUS), Facebook -->
+	<!-- Grants the READ_PHONE_STATE permission only on devices that run Android 10 (API level 29) and lower. -->
+	<!-- 자세한 내용은 다음 링크 및 각 미디에이션 가이드를 참고하십시오. https://developer.android.com/preview/privacy/permissions?hl=ko -->
+	<!-- 1. 앱이 Android 11을 타겟팅하면, 아래와 같이 사용하십시오. -->
+	<uses-permission android:name="READ_PHONE_STATE" android:maxSdkVersion="29" />
+	<uses-permission android:name="READ_PHONE_NUMBERS" />
+
+	<!-- 2. 앱이 Android 11을 타겟팅하지 않는다면, 아래와 같이 사용하십시오. -->
+	<!-- <uses-permission android:name="READ_PHONE_STATE" /> -->
+
+	<!-- Smaato -->
+	<uses-feature android:name="android.hardware.location.network" />
+
     <application
 		android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:icon="@drawable/ic_launcher"
@@ -79,35 +109,5 @@
 		<activity android:name="com.mopub.mobileads.MoPubFullscreenActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
 
 	</application>
-
-	<!-- Common, AdMob, Cauly, Facebook, Adfit(adam), Dawin Click(SyrupAd, T-ad), MAN(MANPLUS), Mopub, Smaato -->
-	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-	<!-- Common, AdMob, Cauly, Facebook, Adfit(adam), Dawin Click(SyrupAd, T-ad), MAN(MANPLUS), Mopub, Smaato -->
-	<uses-permission android:name="android.permission.INTERNET" />
-
-	<!-- Dawin Click(SyrupAd, T-ad) -->
-	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
-	<!-- Facebook -->
-	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
-	<!-- MAN(MANPLUS), Smaato(optional) -->
-	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-
-	<!-- MAN(MANPLUS) -->
-	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
-	<!-- MAN(MANPLUS), Facebook -->
-	<!-- Grants the READ_PHONE_STATE permission only on devices that run Android 10 (API level 29) and lower. -->
-	<!-- 자세한 내용은 다음 링크 및 각 미디에이션 가이드를 참고하십시오. https://developer.android.com/preview/privacy/permissions?hl=ko -->
-	<!-- 1. 앱이 Android 11을 타겟팅하면, 아래와 같이 사용하십시오. -->
-	<uses-permission android:name="READ_PHONE_STATE" android:maxSdkVersion="29" />
-	<uses-permission android:name="READ_PHONE_NUMBERS" />
-
-	<!-- 2. 앱이 Android 11을 타겟팅하지 않는다면, 아래와 같이 사용하십시오. -->
-	<!-- <uses-permission android:name="READ_PHONE_STATE" /> -->
-
-	<!-- Smaato -->
-	<uses-feature android:name="android.hardware.location.network" />
 
 </manifest>
