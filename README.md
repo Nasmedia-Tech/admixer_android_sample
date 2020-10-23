@@ -146,8 +146,8 @@ dependencies {
 - READ_PHONE_STATE 관련 처리   
 Android 11 부터 앱에서 전화번호를 읽을 때 사용하는 전화 권한 변경됩니다.앱이 Android 11을 타겟팅하고 다음 목록에 표시된 전화번호 API에 액세스해야 하는 경우 READ_PHONE_STATE 권한 대신 READ_PHONE_NUMBERS 권한을 요청해야 합니다. 위의 조건에 해당하신다면, 애드믹서 내 MANPLUS, Facebook 등 READ_PHONE_STATE 권한을 사용하는 미디에이션은 다음과 같이 변경해주셔야 합니다.   
 ( * 자세한 사항은 각 미디에이션 가이드를 참조하십시오.)
- - TelephonyManager 클래스와 TelecomManager 클래스의 getLine1Number() 메서드
- - TelephonyManager 클래스에서 지원되지 않는 getMsisdn() 메서드
+  - TelephonyManager 클래스와 TelecomManager 클래스의 getLine1Number() 메서드
+  - TelephonyManager 클래스에서 지원되지 않는 getMsisdn() 메서드
 앱에서 READ_PHONE_STATE를 선언하여 이전 목록의 메서드 이외의 메서드를 호출하는 경우 모든 Android 버전에서 READ_PHONE_STATE를 계속 요청할 수 있습니다. 그러나 이전 목록의 메서드에만 READ_PHONE_STATE 권한을 사용하는 경우 다음과 같이 매니페스트 파일을 업데이트하세요.   
    
 1. 앱이 Android 10(API 수준 29) 이하에서만 권한을 사용하도록 READ_PHONE_STATE 선언을 변경합니다.
@@ -179,8 +179,8 @@ Android 11 부터 앱에서 전화번호를 읽을 때 사용하는 전화 권�
    
 ### 3-3 Android 9 (Pie) 업데이트에 따른 추가 설정 (Required, 필수)
 
-ClearText HTTP traffic to not permitted 관련 처리   
-- targetSdkVersion 28 부터 네트워크 통신 시 암호화 되지 않은 HTTP통신이 차단되도록 기본설정이 변경되었습니다. 애드믹서 내 모든 미디에이션과 고수익광고가 정상동작하기 위해서는 프로젝트 내 설정값 추가를 통해서 HTTP 통신을 허용해주셔야 하며, 방법은 아래와 같습니다.   
+- ClearText HTTP traffic to not permitted 관련 처리   
+ - targetSdkVersion 28 부터 네트워크 통신 시 암호화 되지 않은 HTTP통신이 차단되도록 기본설정이 변경되었습니다. 애드믹서 내 모든 미디에이션과 고수익광고가 정상동작하기 위해서는 프로젝트 내 설정값 추가를 통해서 HTTP 통신을 허용해주셔야 하며, 방법은 아래와 같습니다.   
 : AndroidManifest.xml 파일에서 application 항목의 속성값으로 usesCleartextTraffic을 true로 설정해야 합니다.   
 (Android 9 부터 해당값이 default로 false 설정되어 HTTP 통신이 제한됩니다.)   
 
