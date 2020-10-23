@@ -1,4 +1,4 @@
-## Update Log
+## Update History
 
 | Version | Note 
 |:---:|:---|
