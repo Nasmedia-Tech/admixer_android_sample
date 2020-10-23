@@ -142,7 +142,7 @@ dependencies {
 
 ## Step 3. Project Setting
 
-### 3.1 Android 11 업데이트에 따른 READ_PHONE_STATE 추가 설정 (Options, 옵션) [Link](https://developer.android.com/preview/privacy/permissions?hl=ko)   
+### 3-1 Android 11 업데이트에 따른 READ_PHONE_STATE 추가 설정 (Options, 옵션) [Link](https://developer.android.com/preview/privacy/permissions?hl=ko)   
 - READ_PHONE_STATE 관련 처리   
 Android 11 부터 앱에서 전화번호를 읽을 때 사용하는 전화 권한 변경됩니다.앱이 Android 11을 타겟팅하고 다음 목록에 표시된 전화번호 API에 액세스해야 하는 경우 READ_PHONE_STATE 권한 대신 READ_PHONE_NUMBERS 권한을 요청해야 합니다. 위의 조건에 해당하신다면, 애드믹서 내 MANPLUS, Facebook 등 READ_PHONE_STATE 권한을 사용하는 미디에이션은 다음과 같이 변경해주셔야 합니다.   
 ( * 자세한 사항은 각 미디에이션 가이드를 참조하십시오.)
@@ -164,7 +164,7 @@ Android 11 부터 앱에서 전화번호를 읽을 때 사용하는 전화 권�
 </manifest> 
 ```
 
-### 3.2 Google Play targetAPI 요구사항 충족하기 [Link](https://developer.android.com/distribute/best-practices/develop/target-sdk?hl=ko)   
+### 3-2 Google Play targetAPI 요구사항 충족하기 [Link](https://developer.android.com/distribute/best-practices/develop/target-sdk?hl=ko)   
 
 - APK를 업로드하는 경우 Google Play의 타겟 API 수준 요구사항을 충족해야 합니다.   
   - 새 앱은 Android 10(API 수준 29) 이상을 타겟팅해야 하며 앱 업데이트는 Android 9(API 수준 28) 이상을 타겟팅해야 합니다.   
@@ -584,7 +584,7 @@ adInfo.setInterstitialAdType(InterstitialAdType.Popup, adConfig);
 ##### Please refer to each mediation guide and sample project source code for details.
 
 
-### 5-2 Interstitial 광고(전면광고) 추가 - 이벤트 핸들러
+### 5-3 Interstitial 광고(전면광고) 추가 - 이벤트 핸들러
 - 다음은 전면광고에서 발생하는 이벤트를 Activity에서 받기 위해 InterstitialAdListener 인터페이스를 구현한 것입니다.
 - InterstitialAdViewListener 인터페이스를 구현한 객체만이 InterstitialAd 의 setInterstitialAdListener 메소드의 파라메터로 지정되어 이벤트를 받을 수 있습니다.
 
@@ -613,7 +613,7 @@ public class AdMixerSampleActivity extends Activity implements InterstitialAdLis
 
 ```
 
-### 5-3 Interstitial 광고(전면광고) 추가 - 닫기 (Close)
+### 5-4 Interstitial 광고(전면광고) 추가 - 닫기 (Close)
 - 전면 광고 화면 노출 후 원하는 시점에 닫고 싶으시면 closeInterstital 메소드를 호출하시면 됩니다.
 - 광고가 화면에 노출되기 전 closeInterstital 를 호출하면 동작하지 않습니다.
 - 만약, Timer를 사용하여 광고를 제거 할 경우 반드시 Timer를 정지 해줘야 합니다.   
