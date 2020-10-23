@@ -68,6 +68,7 @@ repositories {
 
 ### 2-1. File library
 
+- 안드로이드 프로젝트 libs 폴더에 아래의 라이브러리를 추가하십시오.
 #### (필수)   
 - libs/AdMixer_x.y.z.jar (반드시 추가하셔야 사용 가능합니다.)   
 
