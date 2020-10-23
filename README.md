@@ -69,7 +69,7 @@ repositories {
 ### 2-1. File library
 
 #### (필수)   
-- libs/AdMixer_x.y.z.jar   
+- libs/AdMixer_x.y.z.jar (반드시 추가하셔야 사용 가능합니다.)   
 
 #### (선택)   
 - libs/CaulySDK-x.y.z.arr   
@@ -175,7 +175,8 @@ dependencies {
  - 최신 API 수준을 타겟팅하도록 앱을 구성하면 사용자가 이러한 개선사항의 혜택을 받을 수 있으며, 이전 Android 버전에서도 계속해서 앱을 실행할 수 있습니다. 최신 API 수준을 타겟팅하면 앱에서 플랫폼의 최신 기능을 활용해 사용자 환경을 개선할 수 있습니다. 또한 Android 10(API 수준 29) 현재 앱에서 Android 5.1(API 수준 22) 이하를 타겟팅하는 경우 사용자가 처음으로 앱을 시작할 때 경고가 표시됩니다.
    
  - 이 문서에서는 타겟 API 수준을 업데이트하여 Google Play 요구사항을 충족할 때 알아 두어야 하는 중요 사항에 관해 다룹니다.
- - 참고: Gradle 파일에 매니페스트 항목이 포함되어 있는 경우 빌드 구성의 설명대로 앱의 Gradle 파일에서 targetSdkVersion의 현재 값을 확인하거나 변경할 수 있습니다. 또는 <uses-sdk> 매니페스트 요소 문서에 설명되어 있는 대로 매니페스트 파일에 있는 android:targetSdkVersion 속성을 사용할 수 있습니다.
+ - 참고: Gradle 파일에 매니페스트 항목이 포함되어 있는 경우 빌드 구성의 설명대로 앱의 Gradle 파일에서 targetSdkVersion의 현재 값을 확인하거나 변경할 수 있습니다. 
+ 또는 <uses-sdk> 매니페스트 요소 문서에 설명되어 있는 대로 매니페스트 파일에 있는 android:targetSdkVersion 속성을 사용할 수 있습니다.
    
 ### 3-3 Android 9 (Pie) 업데이트에 따른 추가 설정 (필수)
 
@@ -225,7 +226,7 @@ AndroidManifest.xml 적용 사항
 
 
 ### 3-5 Update Your Android Manifest For Mediation Library (AndroidManifest.xml 설정)
-- 아래는 각 광고 플랫폼 별로 필요한 권한 설정입니다. 적용하신 라이브러리에 맞게 권한을 추가해 주시면 됩니다. 
+- 아래는 각 광고 플랫폼 별로 필요한 설정입니다. 적용하신 라이브러리에 맞게 추가해 주시면 됩니다. 
 ```
 [AndroidManifest.xml]
 
@@ -325,7 +326,7 @@ AndroidManifest.xml 적용 사항
 ##### (자세한 사항 각 미디에이션 가이드 및 샘플 프로젝트 소스코드를 참조하십시오.)
 
    
-## Step 4. Initialize ( 모바일 광고 초기화 )   
+## Step 4. Initialize 예제 (모바일 광고 초기화)   
 - AdMixer 객체를 통해 반드시 1회 초기화 호출이 필요합니다.
 - AdMixer 객체를 통해 필요한 adapter들을 등록해야 합니다.
 
@@ -380,7 +381,7 @@ public class YourApplication extends Application {
 
 ```
 
-### 4-1 Banner 광고 추가 (광고 뷰 추가)
+### 4-1 Banner 광고 추가 예제 (광고 뷰 추가)
 
 - 아래 코드는 Banner 광고를 RelativeLayout에 추가한 예제입니다.
 
@@ -430,7 +431,7 @@ void onPause() {
 
 ```
 
-### 4-2 Banner 광고 추가 (Layout 파일 이용 방법)
+### 4-2 Banner 광고 추가 예제 (Layout 파일 이용 방법)
 
 - 다음과 같이 Layout XML 파일에 광고를 추가하실 수도 있습니다.
 
@@ -469,7 +470,7 @@ public class LayoutSampleActivity extends Activity {
 
 ```
 
-### 4-3 Banner 광고 추가 (이벤드 핸들러)
+### 4-3 Banner 광고 추가 예제 (이벤드 핸들러)
 - 다음은 Banner광고에서 발생하는 이벤트를 Activity에서 받기 위해 AdViewListener 인터페이스를 구현한 것입니다. 
 - AdViewListener 인터페이스를 구현한 객체만이 AdView의 setAdViewListener메소드의 파라메터로 지정되어 이벤트를 받을 수 있습니다.   
 
@@ -494,7 +495,7 @@ public class AdMixerSampleActivity extends Activity implements AdViewListener {
 ##### (자세한 사항 각 미디에이션 가이드 및 샘플 프로젝트 소스코드를 참조하십시오.)
 
 
-## Step 5. Interstitial 광고(전면광고) 추가
+## Step 5. Interstitial 광고(전면광고) 추가 예제 
 - 전면광고에는 두 가지 형태가 제공됩니다.
 - 팝업형 전면광고의 경우 admixer 네트워크 전면배너만 사용 가능합니다.
 
@@ -503,7 +504,7 @@ public class AdMixerSampleActivity extends Activity implements AdViewListener {
 | !(일반 전면광고 예시)(https://raw.github.com/dcurtis/markdown-mark/master/png/208x128.png) | !(팝업형 전면광고 예시)(https://raw.github.com/dcurtis/markdown-mark/master/png/208x128.png)
 
 
-### 5-1 Interstitial 광고(전면광고) 추가 - 광고 뷰 추가
+### 5-1 Interstitial 광고(전면광고) 추가 예제 - 광고 뷰 추가
 
 - Interstitial 광고는 1회성 객체입니다. Start 혹은 load 메소드 호출은 한 번만 가능합니다.
 - showInterstitial은 로딩과 동시에 별도의 api 호출 없이 바로 전면 광고를 표시하는 방법입니다.
@@ -555,7 +556,7 @@ void onDestroy() {
 
 ```
 
-### 5-2 Interstitial 광고(전면광고) 추가 - 팝업형 설정
+### 5-2 Interstitial 광고(전면광고) 추가 예제 - 팝업형 설정
 
 - 팝업형 전면광고 설정코드 (원하시는 조건만 추가하시면 됩니다.)
 
@@ -585,7 +586,7 @@ adInfo.setInterstitialAdType(InterstitialAdType.Popup, adConfig);
 
 ##### (자세한 사항 각 미디에이션 가이드 및 샘플 프로젝트 소스코드를 참조하십시오.)
 
-### 5-3 Interstitial 광고(전면광고) 추가 - 이벤트 핸들러
+### 5-3 Interstitial 광고(전면광고) 추가 예제 - 이벤트 핸들러
 - 다음은 전면광고에서 발생하는 이벤트를 Activity에서 받기 위해 InterstitialAdListener 인터페이스를 구현한 것입니다.
 - InterstitialAdViewListener 인터페이스를 구현한 객체만이 InterstitialAd 의 setInterstitialAdListener 메소드의 파라메터로 지정되어 이벤트를 받을 수 있습니다.
 
@@ -614,7 +615,7 @@ public class AdMixerSampleActivity extends Activity implements InterstitialAdLis
 
 ```
 
-### 5-4 Interstitial 광고(전면광고) 추가 - 닫기 (Close)
+### 5-4 Interstitial 광고(전면광고) 추가 예제 - 닫기 (Close)
 - 전면 광고 화면 노출 후 원하는 시점에 닫고 싶으시면 closeInterstital 메소드를 호출하시면 됩니다.
 - 광고가 화면에 노출되기 전 closeInterstital 를 호출하면 동작하지 않습니다.
 - 만약, Timer를 사용하여 광고를 제거 할 경우 반드시 Timer를 정지 해줘야 합니다.   
