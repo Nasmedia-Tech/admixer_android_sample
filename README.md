@@ -160,7 +160,7 @@ dependencies {
 
 <manifest>
    <!-- Grants the READ_PHONE_STATE permission only on devices that run Android 10 (API level 29) and lower. -->
-   <uses-permission android:name="READ_PHONE_STATE“ android:maxSdkVersion="29" />
+   <uses-permission android:name="READ_PHONE_STATE" android:maxSdkVersion="29" />
    <uses-permission android:name="READ_PHONE_NUMBERS" />
 </manifest> 
 ```
@@ -340,18 +340,18 @@ public class YourApplication extends Application {
       Logger.setLogLevel(LogLevel.Verbose); // 로그 레벨 설정
 
       // 필요한 adapter 등록
-      // AdMixer.registerAdapter(AdMixer.ADAPTER_ADFIT, “com.admixer.sample.adapters.AdfitAdapter”);
-      // AdMixer.registerAdapter(AdMixer.ADAPTER_ADMOB, “com.admixer.sample.adapters.AdmobAdapter”);
-      // AdMixer.registerAdapter(AdMixer.ADAPTER_CAULY, “com.admixer.sample.adapters.CaulyAdapter”);
-      // AdMixer.registerAdapter(AdMixer.ADAPTER_DAWIN_CLICK, “com.admixer.sample.adapters.DawinClickAdapter”);
-      // AdMixer.registerAdapter(AdMixer.ADAPTER_FACEBOOK, “com.admixer.sample.adapters.FacebookAdapter”);
-      // AdMixer.registerAdapter(AdMixer.ADAPTER_MAN, “com.admixer.sample.adapters.ManAdapter”);
-      // AdMixer.registerAdapter(AdMixer.ADAPTER_MOPUB, “com.admixer.sample.adapters.MopubAdapter”);
-      // AdMixer.registerAdapter(AdMixer.ADAPTER_SMAATO, “com.admixer.sample.adapters.SmaatoAdapter”);
+      // AdMixer.registerAdapter(AdMixer.ADAPTER_ADFIT, "com.admixer.sample.adapters.AdfitAdapter");
+      // AdMixer.registerAdapter(AdMixer.ADAPTER_ADMOB, "com.admixer.sample.adapters.AdmobAdapter");
+      // AdMixer.registerAdapter(AdMixer.ADAPTER_CAULY, "com.admixer.sample.adapters.CaulyAdapter");
+      // AdMixer.registerAdapter(AdMixer.ADAPTER_DAWIN_CLICK, "com.admixer.sample.adapters.DawinClickAdapter");
+      // AdMixer.registerAdapter(AdMixer.ADAPTER_FACEBOOK, "com.admixer.sample.adapters.FacebookAdapter");
+      // AdMixer.registerAdapter(AdMixer.ADAPTER_MAN, "com.admixer.sample.adapters.ManAdapter");
+      // AdMixer.registerAdapter(AdMixer.ADAPTER_MOPUB, "com.admixer.sample.adapters.MopubAdapter");
+      // AdMixer.registerAdapter(AdMixer.ADAPTER_SMAATO, "com.admixer.sample.adapters.SmaatoAdapter");
 
       // AdMixer 초기화를 위해 반드시 광고 호출 전에 앱에서 1회 호출해주셔야 합니다.
       // adunits 파라미터는 앱 내에서 사용할 모든 adunit_id 를 배열 형태로 넘겨 주셔야 합니다.
-      adunits = new ArrayList<String>(Arrays.asList(“111111", “222222", “333333"));
+      adunits = new ArrayList<String>(Arrays.asList("111111", "222222", "333333"));
 
       AdMixer.init(this, mediaKey, adunits);
 
@@ -367,7 +367,7 @@ public class YourApplication extends Application {
       // AdSettings.setTestMode(true); // Facebook 테스트 모드로 광고 시 해당 코드 필요.
 
       // Mopub 적용 시에 SDK 초기화 호출이 필요
-      SdkConfiguration sdkConfiguration = new SdkConfiguration.Builder(“my_any_mopub_adunit_id")
+      SdkConfiguration sdkConfiguration = new SdkConfiguration.Builder("my_any_mopub_adunit_id")
                                                 .withLogLevel(MoPubLog.LogLevel.DEBUG).build();
       MoPub.initializeSdk(this, sdkConfiguration, new SdkInitializationListener() {
          @Override
@@ -376,7 +376,7 @@ public class YourApplication extends Application {
       });
 
       // Smaato 적용 시에 SDK 초기화 호출이 필요
-      SmaatoSdk.init(this.getApplication(), “my_smaato_publisher_id");
+      SmaatoSdk.init(this.getApplication(), "my_smaato_publisher_id");
    }
 }
 
@@ -393,7 +393,7 @@ AdView adView;
 
 void addBannerView() {	
    // adunit id 값을 설정
-   AdInfo adInfo = new AdInfo(“my_adunit_id"); 
+   AdInfo adInfo = new AdInfo("my_adunit_id"); 
    adInfo.setMaxRetryCountInSlot(-1);   // 리로드 시간 내에 전체 AdNetwork 반복 최대 횟수(-1 : 무한, 0 : 반복 없음, n : n번 반복)
 
    adView = new AdView(this); // 배너 광고 View 생성
@@ -441,17 +441,17 @@ void onPause() {
 
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width=“match_parent"    
-	android:layout_height=“match_parent" 
+        android:layout_width="match_parent"    
+	android:layout_height="match_parent" 
 	android:orientation="vertical">
         
 	<com.admixer.ads.AdView 
-		android:layout_width=“wrap_content"
+		android:layout_width="wrap_content"
                 android:layout_height="wrap_content"        
 		android:id="@+id/ad_view"/>        
                 
-	<TextView android:layout_width=“match_parent"        
-		android:layout_height="wrap_content“
+	<TextView android:layout_width="match_parent"        
+		android:layout_height="wrap_content"
 		android:text="@string/hello" />
                 
 </LinearLayout>
@@ -463,7 +463,7 @@ public class LayoutSampleActivity extends Activity {
    public void onCreate(Bundle savedInstanceState) {        
       super.onCreate(savedInstanceState);
       setContentView(R.layout.main);
-      AdInfo adInfo = new AdInfo(“my_adunit_id");        
+      AdInfo adInfo = new AdInfo("my_adunit_id");        
       AdView adView = (AdView)findViewById(R.id.ad_view);        
       adView.setAdInfo(adInfo, this);    
    }
@@ -531,7 +531,7 @@ public class AdMixerSampleActivity extends Activity implements AdViewListener {
 
 void addInterstitialAdView() {    	
    // adunit id 값 설정
-   AdInfo adInfo = new AdInfo(“my_adunit_id＂); 
+   AdInfo adInfo = new AdInfo("my_adunit_id"); 
    // 초단위로 전면 광고 타임아웃 설정 (기본값 : 0, 0 이면 서버지정 시간으로 처리, 서버지정 시간 : 20s) 
    adInfo.setInterstitialTimeout(0);		
    // 리로드 시간 내에 전체 AdNetwork 반복 최대 횟수(-1 : 무한, 0 : 반복 없음, n : n번 반복)
@@ -580,7 +580,7 @@ adConfig.setButtonFrameColor(null);
 adInfo.setInterstitialAdType(InterstitialAdType.Popup, adConfig);
 
 ```
-- (참고 1) 팝업형 전면광고 오른쪽 버튼 설정 시 “onRightClicked” 리스너에서 앱 종료코드를 구현해주시기 바랍니다.
+- (참고 1) 팝업형 전면광고 오른쪽 버튼 설정 시 "onRightClicked" 리스너에서 앱 종료코드를 구현해주시기 바랍니다.
 다양한 환경에서 종료가 가능하기 때문에 퍼블리셔가 직접 설정하게 되어있습니다. 일반적으로 finish() 함수 호출.   
 - (참고 2) 팝업형 전면광고 소재 사이즈는 Full 전면광고 소재 사이즈의 85% 축소된 비율로 노출됩니다.   하단의 버튼 영역 사이즈는 팝업형 전면광고 소재 비율 대비 12% 비율로 노출됩니다.
 
