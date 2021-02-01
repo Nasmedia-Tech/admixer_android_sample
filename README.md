@@ -15,7 +15,7 @@
 | `DawinClick` | 3.16.7 | 2020.08.24 | O | [다운로드](https://click.dawin.tv/poc/#/sdk "download link")
 | `MANPLUS` | 107 | 2020.08.24 | O | [다운로드](http://docs.meba.kr/s-plus/sdk/android/ "download link")
 | `Mopub` | 5.13.1 | 2020.08.24 | O | [다운로드](https://developers.mopub.com/publishers/android/ "download link")
-| `Smatto` | 21.5.2 | 2020.08.24 | O | [다운로드](https://www.smaato.com/resources/sdks/ "download link")
+| `Smaato` | 21.5.2 | 2020.08.24 | O | [다운로드](https://www.smaato.com/resources/sdks/ "download link")
 
 ## Development Environment
 - Android Studio 권장 (Recommended)
