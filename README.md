@@ -1,7 +1,7 @@
 # AdMixerSample
 
 - Admixer Android SDK Sample Project   
-- Current Admixer SDK Version 2.3.1 / date. 2020.03.16
+- Current Admixer SDK Version 2.1.3 / date. 2020.03.16
 
 ## AdMixer SDK Support Mediation Version
 
