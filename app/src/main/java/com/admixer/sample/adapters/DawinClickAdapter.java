@@ -88,7 +88,7 @@ public class DawinClickAdapter extends BaseAdAdapter implements AdListener, OnCo
 		RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
 		parentAdView.addView(adView, params);
 
-		// 광고 요청 (필수) 단 XML상에서 광고를 요청한 경우는 호출하지 않음. 
+		// 광고 요청 (필수) 단 XML상에서 광고를 요청한 경우는 호출하지 않음.
 		try {
 			adView.loadAd(null);
 		} catch (Exception e) {

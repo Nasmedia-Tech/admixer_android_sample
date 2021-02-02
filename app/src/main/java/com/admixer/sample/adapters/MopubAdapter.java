@@ -13,7 +13,6 @@ import com.admixer.common.Constants;
 import com.admixer.common.Logger;
 import com.admixer.common.Logger.LogLevel;
 import com.admixer.mediation.BaseAdAdapter;
-import com.mopub.common.MoPub;
 import com.mopub.mobileads.MoPubErrorCode;
 import com.mopub.mobileads.MoPubView;
 import com.mopub.mobileads.MoPubView.MoPubAdSize;
@@ -21,6 +20,7 @@ import com.mopub.mobileads.MoPubView.BannerAdListener;
 import com.mopub.mobileads.MoPubInterstitial;
 import com.mopub.mobileads.MoPubInterstitial.InterstitialAdListener;
 
+import org.jetbrains.annotations.NotNull;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -58,11 +58,11 @@ public class MopubAdapter extends BaseAdAdapter implements BannerAdListener, Int
 
         try {
             JSONObject adapterAdInfo = adInfo.getAdapterAdInfo(getAdapterName());
-            if(adapterAdInfo != null) {
+            if (adapterAdInfo != null) {
 
-                if(adapterAdInfo.has("adSize")) {
+                if (adapterAdInfo.has("adSize")) {
                     String size = adapterAdInfo.getString("adSize");
-                    if(Arrays.asList(adSizeList).contains(size))
+                    if (Arrays.asList(adSizeList).contains(size))
                         adSize = size;
                 }
             }
@@ -77,12 +77,12 @@ public class MopubAdapter extends BaseAdAdapter implements BannerAdListener, Int
         super.closeAdapter();
         Logger.writeLog(LogLevel.Debug, "Mopub close Adapter");
 
-        if(adView != null) {
+        if (adView != null) {
             adView.destroy();
             adView = null;
         }
 
-        if(interstitial != null) {
+        if (interstitial != null) {
             interstitial.destroy();
             interstitial = null;
         }
@@ -90,7 +90,7 @@ public class MopubAdapter extends BaseAdAdapter implements BannerAdListener, Int
 
     @SuppressLint("MissingPermission")
     public boolean loadAd(Activity baseActivity, RelativeLayout parentAdView) {
-        if(adunitId == null) {
+        if (adunitId == null) {
             Logger.writeLog(LogLevel.Warn, "Mopub adunit id is empty.");
             return false;
         }
@@ -98,32 +98,32 @@ public class MopubAdapter extends BaseAdAdapter implements BannerAdListener, Int
         adformat = Constants.ADFORMAT_BANNER;
         isInterstitial = 0;
 
-        RelativeLayout.LayoutParams params 	= new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         params.addRule(RelativeLayout.CENTER_HORIZONTAL);
 
         adView = new MoPubView(baseActivity);
         adView.setAdUnitId(adunitId);
 
         MoPubAdSize adSize;
-        switch(this.adSize) {
-            case "MATCH_VIEW" :
-                adSize	= MoPubAdSize.MATCH_VIEW;
+        switch (this.adSize) {
+            case "MATCH_VIEW":
+                adSize = MoPubAdSize.MATCH_VIEW;
                 params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
                 break;
-            case "HEIGHT_50" :
-                adSize 	= MoPubAdSize.HEIGHT_50;
+            case "HEIGHT_50":
+                adSize = MoPubAdSize.HEIGHT_50;
                 break;
-            case "HEIGHT_90" :
-                adSize 	= MoPubAdSize.HEIGHT_90;
+            case "HEIGHT_90":
+                adSize = MoPubAdSize.HEIGHT_90;
                 break;
-            case "HEIGHT_250" :
-                adSize	= MoPubAdSize.HEIGHT_250;
+            case "HEIGHT_250":
+                adSize = MoPubAdSize.HEIGHT_250;
                 break;
-            case "HEIGHT_280" :
-                adSize	= MoPubAdSize.HEIGHT_280;
+            case "HEIGHT_280":
+                adSize = MoPubAdSize.HEIGHT_280;
                 break;
-            default :
-                adSize	= MoPubAdSize.MATCH_VIEW;
+            default:
+                adSize = MoPubAdSize.MATCH_VIEW;
                 params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
                 break;
         }
@@ -140,7 +140,7 @@ public class MopubAdapter extends BaseAdAdapter implements BannerAdListener, Int
 
     @SuppressLint("MissingPermission")
     public boolean loadInterstitialAd(Activity baseActivity, RelativeLayout parentAdView) {
-        if(adunitId == null) {
+        if (adunitId == null) {
             Logger.writeLog(LogLevel.Warn, "Mopub adunit id is empty.");
             return false;
         }
@@ -157,14 +157,14 @@ public class MopubAdapter extends BaseAdAdapter implements BannerAdListener, Int
     }
 
     @Override
-    public void onBannerLoaded(MoPubView banner) {
+    public void onBannerLoaded(@NotNull MoPubView banner) {
         Logger.writeLog(LogLevel.Debug, "Mopub onBannerLoaded");
         fireOnAdReceived();
     }
 
     @Override
     public void onBannerFailed(MoPubView banner, MoPubErrorCode errorCode) {
-        fireOnAdReceiveAdFailed(AX_ERR_ADAPTER, "onBannerFailed("+errorCode+")");
+        fireOnAdReceiveAdFailed(AX_ERR_ADAPTER, "onBannerFailed(" + errorCode + ")");
     }
 
     @Override
@@ -188,14 +188,14 @@ public class MopubAdapter extends BaseAdAdapter implements BannerAdListener, Int
         fireOnAdReceived();
 
         hasAd = true;
-        if(!loadOnly) {
+        if (!loadOnly) {
             show();
         }
     }
 
     @Override
     public void onInterstitialFailed(MoPubInterstitial interstitial, MoPubErrorCode errorCode) {
-        fireOnAdReceiveAdFailed(AX_ERR_ADAPTER, "onInterstitialFailed("+errorCode+")");
+        fireOnAdReceiveAdFailed(AX_ERR_ADAPTER, "onInterstitialFailed(" + errorCode + ")");
     }
 
     @Override
@@ -221,16 +221,16 @@ public class MopubAdapter extends BaseAdAdapter implements BannerAdListener, Int
 
     @Override
     public boolean show() {
-        if(!hasAd || interstitial == null)
+        if (!hasAd || interstitial == null)
             return false;
 
         hasAd = false;
-        if(interstitial.isReady()) {
+        if (interstitial.isReady()) {
             interstitial.show();
             Logger.writeLog(LogLevel.Debug, "Mopub interstitial show");
             fireOnInterstitialAdShown();
             return true;
-        }else {
+        } else {
             return false;
         }
     }

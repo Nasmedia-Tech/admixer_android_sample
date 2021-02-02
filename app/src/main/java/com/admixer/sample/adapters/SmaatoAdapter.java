@@ -7,15 +7,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
+import androidx.annotation.NonNull;
+
 import com.admixer.ads.AdInfo;
 import com.admixer.ads.AdMixer;
 import com.admixer.common.Constants;
 import com.admixer.common.Logger;
 import com.admixer.common.Logger.LogLevel;
 import com.admixer.mediation.BaseAdAdapter;
+import com.smaato.sdk.banner.ad.BannerAdSize;
 import com.smaato.sdk.banner.widget.BannerError;
 import com.smaato.sdk.banner.widget.BannerView;
-import com.smaato.sdk.banner.ad.BannerAdSize;
 import com.smaato.sdk.core.SmaatoSdk;
 import com.smaato.sdk.interstitial.EventListener;
 import com.smaato.sdk.interstitial.Interstitial;
@@ -27,8 +29,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Arrays;
-
-import androidx.annotation.NonNull;
 
 import static com.admixer.ads.AdMixer.AX_ERR_ADAPTER;
 
@@ -103,7 +103,7 @@ public class SmaatoAdapter extends BaseAdAdapter implements BannerView.EventList
         isInterstitial = 0;
         this.baseActivity = baseActivity;
 
-        RelativeLayout.LayoutParams params 	= new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        RelativeLayout.LayoutParams params    = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         params.addRule(RelativeLayout.CENTER_HORIZONTAL);
 
         adView = new BannerView(baseActivity);
@@ -111,20 +111,20 @@ public class SmaatoAdapter extends BaseAdAdapter implements BannerView.EventList
         BannerAdSize adSize;
         switch(this.adSize) {
             case "XX_LARGE_320x50" :
-                adSize	= BannerAdSize.XX_LARGE_320x50;
+                adSize   = BannerAdSize.XX_LARGE_320x50;
                 params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
                 break;
             case "MEDIUM_RECTANGLE_300x250" :
-                adSize 	= BannerAdSize.MEDIUM_RECTANGLE_300x250;
+                adSize    = BannerAdSize.MEDIUM_RECTANGLE_300x250;
                 break;
             case "LEADERBOARD_728x90" :
-                adSize 	= BannerAdSize.LEADERBOARD_728x90;
+                adSize    = BannerAdSize.LEADERBOARD_728x90;
                 break;
             case "SKYSCRAPER_120x600" :
-                adSize	= BannerAdSize.SKYSCRAPER_120x600;
+                adSize   = BannerAdSize.SKYSCRAPER_120x600;
                 break;
             default :
-                adSize	= BannerAdSize.XX_LARGE_320x50;
+                adSize   = BannerAdSize.XX_LARGE_320x50;
                 params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
                 break;
         }

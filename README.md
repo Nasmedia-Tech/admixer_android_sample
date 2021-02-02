@@ -1,21 +1,21 @@
 # AdMixerSample
 
 - Admixer Android SDK Sample Project   
-- Current Admixer SDK Version 2.1.3 / date. 2020.03.16
+- Current Admixer SDK Version 2.2.0 / date. 2021.01.28
 
 ## AdMixer SDK Support Mediation Version
 
 | AdNetwork | Version | Check Date | compatible | download
 |---|:---:|---:|:---:|:---:|
-| `AdMixer` | 2.1.3 | 2020.08.24 | O | [다운로드](http://admixer.co.kr/ "download link")
-| `Adfit` | 3.4.0 | 2020.08.24 | O | [다운로드](https://github.com/adfit/adfit-android-sdk/ "download link")
-| `Admob` | 19.3.0 | 2020.08.24 | O | [다운로드](https://developers.google.com/admob/android/sdk?hl=ko/ "download link")
-| `Cauly` | 3.5.08 | 2020.08.24 | O | [다운로드](https://github.com/cauly/Android-SDK/ "download link")
-| `Facebook` | 5.11.0 | 2020.08.24 | O | [다운로드](https://developers.facebook.com/docs/app-events/getting-started-app-events-android "download link")
-| `DawinClick` | 3.16.7 | 2020.08.24 | O | [다운로드](https://click.dawin.tv/poc/#/sdk "download link")
-| `MANPLUS` | 107 | 2020.08.24 | O | [다운로드](http://docs.meba.kr/s-plus/sdk/android/ "download link")
-| `Mopub` | 5.13.1 | 2020.08.24 | O | [다운로드](https://developers.mopub.com/publishers/android/ "download link")
-| `Smatto` | 21.5.2 | 2020.08.24 | O | [다운로드](https://www.smaato.com/resources/sdks/ "download link")
+| `AdMixer` | 2.2.0 | 2021.01.28 | O | [다운로드](http://admixer.co.kr/ "download link")
+| `Adfit` | 3.7.1 | 2021.01.28 | O | [다운로드](https://github.com/adfit/adfit-android-sdk/ "download link")
+| `Admob` | 19.7.0 | 2021.01.28 | O | [다운로드](https://developers.google.com/admob/android/sdk?hl=ko/ "download link")
+| `Cauly` | 3.5.14 | 2021.01.28 | O | [다운로드](https://github.com/cauly/Android-SDK/ "download link")
+| `Facebook` | 6.2.0 | 2021.01.28 | O | [다운로드](https://developers.facebook.com/docs/app-events/getting-started-app-events-android "download link")
+| `DawinClick` | 3.16.7 | 2021.01.28 | O | [다운로드](https://click.dawin.tv/poc/#/sdk "download link")
+| `MANPLUS` | 200 | 2021.01.28 | O | [다운로드](http://docs.meba.kr/s-plus/index/2-sdk/ "download link")
+| `Mopub` | 5.15.0 | 2021.01.28 | O | [다운로드](https://developers.mopub.com/publishers/android/ "download link")
+| `Smaato` | 21.5.7 | 2021.01.28 | O | [다운로드](https://www.smaato.com/resources/sdks/ "download link")
 
 ## Development Environment
 - Android Studio 권장 (Recommended)
@@ -72,10 +72,9 @@ repositories {
 #### (필수)   
 - libs/AdMixer_x.y.z.jar (반드시 추가하셔야 사용 가능합니다.)   
 
-#### (선택)   
-- libs/CaulySDK-x.y.z.arr   
+#### (선택)     
 - libs/DawinClickSDK_x.y.z.jar   
-- libs/mplus_sdk.jar   
+- libs/adMan.jar   
 
 ##### (자세한 사항 각 미디에이션 가이드 및 샘플 프로젝트 소스코드를 참조하십시오.)
 
@@ -88,11 +87,22 @@ repositories {
 repositories {
     //...
     
-    // for Adfit (선택)
+    // For Adfit (선택)
     maven { url 'http://devrepo.kakao.com:8088/nexus/content/groups/public/' }
     // For smaato (선택)
     maven { url "https://s3.amazonaws.com/smaato-sdk-releases/" }
-    
+	// For mopub (선택)
+	maven { url "https://s3.amazonaws.com/moat-sdk-builds" }
+	maven { url "https://maven.google.com" }
+	// For Cauly (선택)
+	maven {
+		url "s3://repo.cauly.net/releases"
+		credentials(AwsCredentials) {
+			accessKey "AKIAWRZUK5MFKYVSUOLB"
+			secretKey "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"
+		}
+	}
+	
     //...
 }
 
@@ -100,38 +110,42 @@ dependencies {
     //...
     
     // 공통 (필수)
-    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.android.support:multidex:2.0.1'
     implementation 'com.google.gms:google-services:4.3.4'
     
     // For AdMixer (필수)
-    implementation files('libs/AdMixer_2.1.3.jar')
+    implementation files('libs/AdMixer_2.2.0.jar')
 
     // For Admob (선택)
-    implementation 'com.google.firebase:firebase-ads:19.3.0'
+    implementation 'com.google.firebase:firebase-ads:19.7.0'
     
     // For Cauly (선택)
-    implementation name: 'CaulySDK-3.5.08', ext: 'aar'
-    // For ManPlus (Man) (선택)
-    implementation files('libs/mplus_sdk.jar')
+    implementation 'com.fsn.cauly:cauly-sdk:3.5.14'
+	
+    // For ManPlus (선택)
+    implementation files('libs/adMan.jar')
+	
     // For DawinClick (선택)
     implementation files('libs/DawinClickSDK_3.16.7.jar')
 
     // For Facebook (선택)
-    implementation "com.facebook.android:audience-network-sdk:5.11.0"
-    implementation "com.android.support:support-annotations:28.0.0"
+    implementation "com.facebook.android:audience-network-sdk:6.2.0"
+    implementation 'androidx.annotation:annotation:1.1.0'
 
     // For Adfit (선택)
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.72"
-    implementation "com.kakao.adfit:ads-base:3.4.0"
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.21'
+    implementation "com.kakao.adfit:ads-base:3.7.1"
 
     // For Mopub (선택)
-    implementation('com.mopub:mopub-sdk:5.13.1@aar') {
+    implementation('com.mopub:mopub-sdk:5.15.0@aar') {
         transitive = true
     }
 
     // For Smaato (선택)
-    implementation 'com.smaato.android.sdk:smaato-sdk:21.5.2'
+    implementation 'com.smaato.android.sdk:smaato-sdk:21.5.7'
 }
+
+apply plugin: 'com.google.gms.google-services' // Common (google play service 적용)
 //...
 
 ```
@@ -286,12 +300,6 @@ AndroidManifest.xml 적용 사항
    <activity android:name="com.facebook.ads.AudienceNetworkActivity"
         android:configChanges="keyboardHidden|orientation|screenSize" />
 
-   <!-- For MANPLUS -->
-   <activity
-        android:name="com.mapps.android.view.InterstitialView"
-        android:screenOrientation="portrait"
-        android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
-
    <!-- For DawinClick -->
    <receiver android:name="com.skplanet.tad.SyrupAdReceiver" >
         <intent-filter>
@@ -351,29 +359,30 @@ public class YourApplication extends Application {
 
       // AdMixer 초기화를 위해 반드시 광고 호출 전에 앱에서 1회 호출해주셔야 합니다.
       // adunits 파라미터는 앱 내에서 사용할 모든 adunit_id 를 배열 형태로 넘겨 주셔야 합니다.
-      adunits = new ArrayList<String>(Arrays.asList("111111", "222222", "333333"));
+	  // YOUR_ADUNIT_ID 는 Admixer 사이트 미디어 > 미디어관리 > 미디어 등록에서 발급받은 Adunit ID 입니다.
+      adunits = new ArrayList<String>(Arrays.asList("YOUR_ADUNIT_ID", "YOUR_ADUNIT_ID", "YOUR_ADUNIT_ID"));
 
       AdMixer.init(this, mediaKey, adunits);
 
       // COPPA(아동보호법) 관련 항목 설정 값 – 선택사항
       // Smaato 의 경우 테스트 광고 요청 시 COPPA(아동보호법) False 로 변경해야 테스트 광고 송출 가능.
       AdMixer.setTagForChildDirectedTreatment(AdMixer.AX_TAG_FOR_CHILD_DIRECTED_TREATMENT_TRUE);
+	  
+	  // MANPLUS 초기화
+	  AdManView.init(this, new Handler());
 
       // Admob 적용 시에 SDK 초기화 호출이 필요
-      MobileAds.initialize(this, new OnInitializationCompleteListener() {…});
+      MobileAds.initialize(this, initializationStatus -> { });
 
       // Facebook 적용 시에 SDK 초기화 호출이 필요
       AudienceNetworkAds.initialize(context);
+	  // AdSettings.addTestDevice(""); // Facebook 테스트 광고 설정, Facebook Audience 가이드 확인
       // AdSettings.setTestMode(true); // Facebook 테스트 모드로 광고 시 해당 코드 필요.
 
       // Mopub 적용 시에 SDK 초기화 호출이 필요
       SdkConfiguration sdkConfiguration = new SdkConfiguration.Builder("my_any_mopub_adunit_id")
                                                 .withLogLevel(MoPubLog.LogLevel.DEBUG).build();
-      MoPub.initializeSdk(this, sdkConfiguration, new SdkInitializationListener() {
-         @Override
-         public void onInitializationFinished() {
-         }
-      });
+      MoPub.initializeSdk(this, sdkConfiguration, () -> { });
 
       // Smaato 적용 시에 SDK 초기화 호출이 필요
       SmaatoSdk.init(this.getApplication(), "my_smaato_publisher_id");
@@ -396,6 +405,24 @@ void addBannerView() {
    AdInfo adInfo = new AdInfo("my_adunit_id"); 
    adInfo.setMaxRetryCountInSlot(-1);   // 리로드 시간 내에 전체 AdNetwork 반복 최대 횟수(-1 : 무한, 0 : 반복 없음, n : n번 반복)
 
+   // 각 애드네트워크별 광고설정값을 아래와 같이 설정할 수 있으며,
+   // adunit 사이즈에 맞게 네트워크 사이즈를 설정하시기 바랍니다. (자세한 사항은 Ad Network 별 추가 광고정보 설정 참고)
+   // Admob AdInfo (Admob Banner 사용 시, 필수)
+   adInfo.setAdapterAdInfo(AdMixer.ADAPTER_ADMOB, "adSize", " BANNER");
+   // Cauly AdInfo (Cauly Banner 사용 시, 필수)
+   adInfo.setAdapterAdInfo(AdMixer.ADAPTER_CAULY, "bannerHeight", "Fixed");
+   // Facebook AdInfo (Facebook Banner 사용 시, 필수)
+   adInfo.setAdapterAdInfo(AdMixer.ADAPTER_FACEBOOK, "adSize", "BANNER_HEIGHT_50");
+   // Smaato AdInfo (Smaato Banner 사용 시, 필수)
+   adInfo.setAdapterAdInfo(AdMixer.ADAPTER_SMAATO, "adSize", "XX_LARGE_320x50");
+   
+   // ManPlus AdInfo (ManPlus Banner 사용 시, 필수)
+   adInfo.setAdapterAdInfo(AdMixer.ADAPTER_MAN, "id", "testbanner");  // 입력 값은 테스트 값이므로 Manplus 가이드를 참조하여 입력하세요. 
+   adInfo.setAdapterAdInfo(AdMixer.ADAPTER_MAN, "storeUrl", "http://www.storeurl.com"); // 입력 값은 테스트 값이므로 Manplus 가이드를 참조하여 입력하세요. 
+   adInfo.setAdapterAdInfo(AdMixer.ADAPTER_MAN, "appId", getPackageName()); // 입력 값은 테스트 값이므로 Manplus 가이드를 참조하여 입력하세요.
+   // 입력 값은 테스트 값이므로 Manplus 가이드를 참조하여 입력하세요. 
+   adInfo.setAdapterAdInfo(AdMixer.ADAPTER_MAN, "appName", getApplicationInfo().loadLabel(getPackageManager()).toString()); 
+   
    adView = new AdView(this); // 배너 광고 View 생성
    adView.setAdInfo(adInfo, this); // 광고 정보 설정 
    // 이 때 설정하신 banner의 부모 activity는 원활한 광고제공을 위해 hardwareAccelerated가 true 설정되오니 참고 부탁드립니다.
@@ -406,11 +433,6 @@ void addBannerView() {
    params.addRule(RelativeLayout.CENTER_HORIZONTAL);
    // 320*50사이즈 일때만, 가로를 디바이스에 맞추거나 영역사이즈로 설정하는 것중에 선택가능
    // 320*50을 제외한 사이즈일때는 영역사이즈로 설정해야 함
-
-   // 각 애드네트워크별 광고설정값을 아래와 같이 설정할 수 있으며,
-   // adunit 사이즈에 맞게 네트워크 사이즈를 설정하시기 바랍니다. (자세한 사항은 Ad Network별 추가 광고정보 설정 참고)
-   adInfo.setAdapterAdInfo(AdMixer.ADAPTER_ADMOB, "adSize", " BANNER");
-   adInfo.setAdapterAdInfo(AdMixer.ADAPTER_FACEBOOK, "adSize", "BANNER_HEIGHT_50");
 
    adView.setLayoutParams(params); // Layout 파라메터 설정
    layout.addView(adView); // 레이아웃에 AdView 추가
@@ -538,6 +560,17 @@ void addInterstitialAdView() {
    adInfo.setMaxRetryCountInSlot(-1); 
    // 고수익 전면광고 노출 시 광고 외 영역 반투명처리 여부 (true: 반투명, false: 처리안함) / 기본값 : true
    adInfo.setBackgroundAlpha(true);
+   
+   // Manplus AdInfo (Manplus 전면광고 사용 시, 필수)
+   adInfo.setAdapterAdInfo(AdMixer.ADAPTER_MAN, "id", "testInter"); // 입력 값은 테스트 값이므로 Manplus 가이드를 참조하여 입력하세요. 
+   adInfo.setAdapterAdInfo(AdMixer.ADAPTER_MAN, "storeUrl", "http://www.storeurl.com"); // 입력 값은 테스트 값이므로 Manplus 가이드를 참조하여 입력하세요. 
+   adInfo.setAdapterAdInfo(AdMixer.ADAPTER_MAN, "appId", getPackageName()); // 입력 값은 테스트 값이므로 Manplus 가이드를 참조하여 입력하세요. 
+   // 입력 값은 테스트 값이므로 Manplus 가이드를 참조하여 입력하세요. 
+   adInfo.setAdapterAdInfo(AdMixer.ADAPTER_MAN, "appName", getApplicationInfo().loadLabel(getPackageManager()).toString()); 
+   // 입력 값은 테스트 값이므로 Manplus 가이드를 참조하여 입력하세요. 
+   // (isPopup 설정은 AdConfig.NOT_USED, AdConfig.USED 2가지 모드 지원합니다. 전체 전면광고(AdConfig.USED) 또는 전체 팝업 광고(AdConfig.NOT_USED) 모드 2가지 입니다.)
+   adInfo.setAdapterAdInfo(AdMixer.ADAPTER_MAN, "isPopup", AdConfig.USED); // Default AdConfig.USED
+   
    // (( 팝업형 전면광고를 원하실 경우 이 위치에 다음 페이지의 옵션을 추가하세요 ))
    interstitialAd = new InterstitialAd (this); // 전면 광고 생성
    interstitialAd.setAdInfo(adInfo, this); // 광고 정보 설정
@@ -659,10 +692,10 @@ adInfo.setAdapterAdInfo(AdMixer.ADAPTER_ADMOB, "adSize", "BANNER");
 - Default : "BANNER"
 
 // For Cauly
-adInfo.setAdapterAdInfo(AdMixer.ADAPTER_CAULY, "bannerHeight", "Proportional");
+adInfo.setAdapterAdInfo(AdMixer.ADAPTER_CAULY, "bannerHeight", "Fixed");
 * Cauly 배너 종류 설정
-- ("Fixed_50" – 320*50 고정사이즈 배너 / "Proportional" – 스크린 세로길이의 10% 사이즈 배너 [기본값] )
-- Default : "Fixed_50"
+- ("Fixed" – 320*50 고정사이즈 배너 [기본값] / "Proportional" – 스크린 세로길이의 10% 사이즈 배너 / "Square" : 가로/세로 고정 형태  )
+- Default : "Fixed"
 
 // For Facebook
 adInfo.setAdapterAdInfo(AdMixer.ADAPTER_FACEBOOK, "adSize", "BANNER_HEIGHT_50");
@@ -681,6 +714,17 @@ adInfo.setAdapterAdInfo(AdMixer.ADAPTER_SMAATO, "adSize", "XX_LARGE_320x50");
 * smaato 배너 종류 설정
 - XX_LARGE_320x50, MEDIUM_RECTANGLE_300x250, LEADERBOARD_728x90, SKYSCRAPER_120x600
 - Default : "XX_LARGE_320x50"
+
+// For ManPlus (Manplus 공통 설정, 배너만 사용 시, 아래 4개 설정 필수)
+adInfo.setAdapterAdInfo(AdMixer.ADAPTER_MAN, "id", "매체에서 사용할 광고 영역의 고유 id ex) bannerid, interbannerid");
+adInfo.setAdapterAdInfo(AdMixer.ADAPTER_MAN, "storeUrl", "스토어 url");
+adInfo.setAdapterAdInfo(AdMixer.ADAPTER_MAN, "appId", "패키지명");
+adInfo.setAdapterAdInfo(AdMixer.ADAPTER_MAN, "appName", "앱명");
+
+* ManPlus 전면광고 설정 (전면광고 사용 시, 공통설정(위 4개) + 전면광고 설정(아래 1개))
+adInfo.setAdapterAdInfo(AdMixer.ADAPTER_MAN, "isPopup", AdConfig.USED);
+- AdConfig.USED, AdConfig.NOT_USED
+- Default : "AdConfig.USED"
 
 ```
 

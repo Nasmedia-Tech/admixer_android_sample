@@ -42,7 +42,7 @@ public class CaulyAdapter extends BaseAdAdapter implements OnCommandCompletedLis
 	boolean hasAd = false;
 	boolean coppa = false;
 
-	String[] bannerHeightList = {"Proportional", "Fixed_50"};
+	String[] bannerHeightList = {CaulyAdInfoBuilder.PROPORTIONAL, CaulyAdInfoBuilder.FIXED, CaulyAdInfoBuilder.SQUARE};
 	String bannerHeight = bannerHeightList[1];
 	
 	public String getAdapterName() {
@@ -124,6 +124,7 @@ public class CaulyAdapter extends BaseAdAdapter implements OnCommandCompletedLis
 				.reloadInterval(120)
 				.enableDefaultBannerAd(false)
 				.bannerHeight(bannerHeight)
+				.setBannerSize(getWidth(), getHeight())
 				.build();
 
 		// CaulyAdInfo를 이용, CaulyAdView 생성.

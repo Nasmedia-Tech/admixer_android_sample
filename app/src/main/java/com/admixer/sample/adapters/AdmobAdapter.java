@@ -7,24 +7,31 @@ import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.RelativeLayout;
 
+import androidx.annotation.NonNull;
+
 import com.admixer.ads.AdInfo;
 import com.admixer.ads.AdMixer;
 import com.admixer.common.Constants;
 import com.admixer.common.Logger;
 import com.admixer.common.Logger.LogLevel;
 import com.admixer.mediation.BaseAdAdapter;
+import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.FullScreenContentCallback;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.RequestConfiguration;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 /**
  * Admob Adapter
@@ -37,6 +44,7 @@ public class AdmobAdapter extends BaseAdAdapter {
 	AdRequest adRequest;
 	InterstitialAd interstitial;
 	boolean hasAd = false;
+	Activity baseActivity;
 
 	//adapterAdInfo
 	String[] adSizeList = {"BANNER", "SMART_BANNER", "LARGE_BANNER", "MEDIUM_RECTANGLE", "FULL_BANNER", "LEADERBOARD"};
@@ -87,7 +95,6 @@ public class AdmobAdapter extends BaseAdAdapter {
 		}
 		
 		if(interstitial != null) {
-			interstitial.setAdListener(null);
 			interstitial = null;
 			
 			Logger.writeLog(LogLevel.Debug, "Admob close interstitial");
@@ -101,6 +108,7 @@ public class AdmobAdapter extends BaseAdAdapter {
 			return false;
 		}
 
+		this.baseActivity = baseActivity;
 		adformat = Constants.ADFORMAT_BANNER;
 		isInterstitial = 0;
 
@@ -112,12 +120,12 @@ public class AdmobAdapter extends BaseAdAdapter {
 
 		AdSize adSize;
 		switch(this.adSize) {
+			case "BANNER" :
+				adSize 	= AdSize.BANNER;
+				break;
 			case "SMART_BANNER" :
 				adSize	= AdSize.SMART_BANNER;
 				params = new RelativeLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-				break;
-			case "BANNER" :
-				adSize 	= AdSize.BANNER;
 				break;
 			case "LARGE_BANNER" :
 				adSize 	= AdSize.LARGE_BANNER;
@@ -147,14 +155,19 @@ public class AdmobAdapter extends BaseAdAdapter {
 			}
 
 			@Override
-			public void onAdFailedToLoad(int errorCode) {
-				super.onAdFailedToLoad(errorCode);
-				fireOnAdReceiveAdFailed(AdMixer.AX_ERR_ADAPTER, "Admob banner onAdFailedToLoad(" + errorCode + ")");
+			public void onAdFailedToLoad(LoadAdError loadAdError) {
+				super.onAdFailedToLoad(loadAdError);
+				fireOnAdReceiveAdFailed(AdMixer.AX_ERR_ADAPTER, "Admob banner onAdFailedToLoad(" + loadAdError.toString() + ")");
 			}
 
 			@Override
-			public void onAdLeftApplication() {
-				super.onAdLeftApplication();
+			public void onAdClicked() {
+				super.onAdClicked();
+			}
+
+			@Override
+			public void onAdImpression() {
+				super.onAdImpression();
 			}
 
 			@Override
@@ -171,7 +184,7 @@ public class AdmobAdapter extends BaseAdAdapter {
 
 	    parentAdView.addView(adView);
 
-		adRequest = new AdRequest.Builder().setRequestAgent("admixer").addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
+		adRequest = new AdRequest.Builder().setRequestAgent("admixer").build();
 
 		adView.loadAd(adRequest);
 	    
@@ -188,49 +201,49 @@ public class AdmobAdapter extends BaseAdAdapter {
 			return false;
 		}
 
+		this.baseActivity = baseActivity;
 		adformat = Constants.ADFORMAT_BANNER;
 		isInterstitial = 1;
 
-		interstitial = new InterstitialAd(baseActivity);
-		interstitial.setAdUnitId(adunitId);
+		adRequest = new AdRequest.Builder().setRequestAgent("admixer").build();
 
-		adRequest = new AdRequest.Builder().setRequestAgent("admixer").addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
-
-	    interstitial.setAdListener(new AdListener(){
-
+		InterstitialAd.load(baseActivity, adunitId, adRequest, new InterstitialAdLoadCallback() {
 			@Override
-			public void onAdClosed() {
-				super.onAdClosed();
-				fireOnInterstitialAdClosed();
-				Logger.writeLog(LogLevel.Debug, "Admob interstitial Closed");
-			}
+			public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+				super.onAdLoaded(interstitialAd);
+				interstitial = interstitialAd;
+				interstitial.setFullScreenContentCallback(new FullScreenContentCallback(){
+					@Override
+					public void onAdFailedToShowFullScreenContent(AdError adError) {
+						super.onAdFailedToShowFullScreenContent(adError);
+						fireOnAdReceiveAdFailed(AdMixer.AX_ERR_ADAPTER, "Admob interstitial onAdFailedToShowFullScreenContent(" + adError.toString() + ")");
+					}
 
-			@Override
-			public void onAdFailedToLoad(int errorCode) {
-				super.onAdFailedToLoad(errorCode);
-				fireOnAdReceiveAdFailed(AdMixer.AX_ERR_ADAPTER, "Admob interstitial onAdFailedToLoad(" + errorCode + ")");
-			}
+					@Override
+					public void onAdShowedFullScreenContent() {
+						super.onAdShowedFullScreenContent();
+						Logger.writeLog(LogLevel.Debug, "Admob interstitial onAdShowedFullScreenContent");
+					}
 
-			@Override
-			public void onAdLeftApplication() {
-				super.onAdLeftApplication();
-			}
+					@Override
+					public void onAdDismissedFullScreenContent() {
+						super.onAdDismissedFullScreenContent();
+						fireOnInterstitialAdClosed();
+						Logger.writeLog(LogLevel.Debug, "Admob interstitial onAdDismissedFullScreenContent");
+					}
+				});
 
-			@Override
-			public void onAdLoaded() {
-				super.onAdLoaded();
 				handleAdLoaded();
 				Logger.writeLog(LogLevel.Debug, "Admob interstitial onAdLoaded");
 			}
-			
-			@Override
-			public void onAdOpened() {
-				super.onAdOpened();
-			}}
-	    );
 
-	    interstitial.loadAd(adRequest);		
-		
+			@Override
+			public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+				super.onAdFailedToLoad(loadAdError);
+				fireOnAdReceiveAdFailed(AdMixer.AX_ERR_ADAPTER, "Admob interstitial onAdFailedToLoad(" + loadAdError.toString() + ")");
+			}
+		});
+
 		return true;
 	}
 
@@ -240,8 +253,8 @@ public class AdmobAdapter extends BaseAdAdapter {
 	
 	void handleAdLoaded() {
 		if(interstitial != null) {
-			if(!loadOnly && interstitial.isLoaded()) {
-				interstitial.show();
+			if(!loadOnly) {
+				interstitial.show(baseActivity);
 				Logger.writeLog(LogLevel.Debug, "Admob interstitial show");
 			} else
 				hasAd = true;
@@ -263,16 +276,12 @@ public class AdmobAdapter extends BaseAdAdapter {
 		if(!hasAd || interstitial == null)
 			return false;
 		
-		if(interstitial.isLoaded()) {
-			hasAd = false;
-			interstitial.show();
-			Logger.writeLog(LogLevel.Debug, "Admob interstitial show");
-			fireOnInterstitialAdShown();
-			return true;
-		}else {
-			return false;
-		}
-		
+		hasAd = false;
+		interstitial.show(baseActivity);
+		Logger.writeLog(LogLevel.Debug, "Admob interstitial show");
+		fireOnInterstitialAdShown();
+		return true;
+
 	}
 
 }

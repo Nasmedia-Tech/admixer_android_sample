@@ -3,10 +3,10 @@ buildscript {
     repositories {
         google()
         jcenter()
-        maven { url "http://jcenter.bintray.com"}
+        maven { url "https://jcenter.bintray.com"}
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.0.1'
+        classpath 'com.android.tools.build:gradle:4.1.2'
         classpath 'com.google.gms:google-services:4.3.4'
     }
 }
@@ -15,9 +15,16 @@ allprojects {
     repositories {
         google()
         jcenter()
-        maven{ url 'http://devrepo.kakao.com:8088/nexus/content/groups/public/'}
+        maven { url 'http://devrepo.kakao.com:8088/nexus/content/groups/public/'}
         maven { url "https://s3.amazonaws.com/moat-sdk-builds" }
         maven { url "https://maven.google.com" }
         maven { url "https://s3.amazonaws.com/smaato-sdk-releases/" }
+		maven {
+            url "s3://repo.cauly.net/releases"
+            credentials(AwsCredentials) {
+                accessKey "AKIAWRZUK5MFKYVSUOLB"
+                secretKey "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"
+            }
+        }
     }
 }

@@ -73,12 +73,6 @@
 		<activity android:name="com.facebook.ads.AudienceNetworkActivity"
 			android:configChanges="keyboardHidden|orientation|screenSize" />
 
-		<!-- For MANPLUS -->
-		<activity
-			android:name="com.mapps.android.view.InterstitialView"
-			android:screenOrientation="portrait"
-			android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
-
 		<!-- For DawinClick -->
 		<receiver android:name="com.skplanet.tad.SyrupAdReceiver" >
 			<intent-filter>
