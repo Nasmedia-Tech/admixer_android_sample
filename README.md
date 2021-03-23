@@ -7,7 +7,7 @@
 
 | AdNetwork | Version | Check Date | compatible | download
 |---|:---:|---:|:---:|:---:|
-| `AdMixer` | 2.2.0 | 2021.01.28 | O | [다운로드](http://admixer.co.kr/ "download link")
+| `AdMixer` | 2.2.0 | 2021.01.28 | O | [다운로드](https://github.com/Nasmedia-Tech/admixer_android_sample/archive/refs/heads/master.zip/ "download link")
 | `Adfit` | 3.7.1 | 2021.01.28 | O | [다운로드](https://github.com/adfit/adfit-android-sdk/ "download link")
 | `Admob` | 19.7.0 | 2021.01.28 | O | [다운로드](https://developers.google.com/admob/android/sdk?hl=ko/ "download link")
 | `Cauly` | 3.5.14 | 2021.01.28 | O | [다운로드](https://github.com/cauly/Android-SDK/ "download link")
