@@ -5,17 +5,17 @@
 
 ## AdMixer SDK Support Mediation Version
 
-| AdNetwork | Version | Check Date | compatible | link
+| AdNetwork | Version | Check Date | Compatible | Link
 |---|:---:|---:|:---:|:---:|
-| `AdMixer` | 2.2.0 | 2021.01.28 | O | [link](https://github.com/Nasmedia-Tech/admixer_android_sample/archive/refs/heads/master.zip/ "link")
-| `Adfit` | 3.7.1 | 2021.01.28 | O | [link](https://github.com/adfit/adfit-android-sdk/ "link")
-| `Admob` | 19.7.0 | 2021.01.28 | O | [link](https://developers.google.com/admob/android/sdk?hl=ko/ "link")
-| `Cauly` | 3.5.14 | 2021.01.28 | O | [link](https://github.com/cauly/Android-SDK/ "link")
-| `Facebook` | 6.2.0 | 2021.01.28 | O | [link](https://developers.facebook.com/docs/audience-network/guides/add-sdk/ "link")
-| `DawinClick` | 3.16.7 | 2021.01.28 | O | [link](https://click.dawin.tv/poc/#/sdk "link")
-| `MANPLUS` | 200 | 2021.01.28 | O | [link](http://docs.meba.kr/s-plus/index/2-sdk/ "link")
-| `Mopub` | 5.15.0 | 2021.01.28 | O | [link](https://developers.mopub.com/publishers/android/ "link")
-| `Smaato` | 21.5.7 | 2021.01.28 | O | [link](https://www.smaato.com/resources/sdks/ "link")
+| `AdMixer` | 2.2.0 | 2021.01.28 | O | [Link](https://github.com/Nasmedia-Tech/admixer_android_sample/archive/refs/heads/master.zip/ "Link")
+| `Adfit` | 3.7.1 | 2021.01.28 | O | [Link](https://github.com/adfit/adfit-android-sdk/ "Link")
+| `Admob` | 19.7.0 | 2021.01.28 | O | [Link](https://developers.google.com/admob/android/sdk?hl=ko/ "Link")
+| `Cauly` | 3.5.14 | 2021.01.28 | O | [Link](https://github.com/cauly/Android-SDK/ "Link")
+| `Facebook` | 6.2.0 | 2021.01.28 | O | [Link](https://developers.facebook.com/docs/audience-network/guides/add-sdk/ "Link")
+| `DawinClick` | 3.16.7 | 2021.01.28 | O | [Link](https://click.dawin.tv/poc/#/sdk "Link")
+| `MANPLUS` | 200 | 2021.01.28 | O | [Link](http://docs.meba.kr/s-plus/index/2-sdk/ "Link")
+| `Mopub` | 5.15.0 | 2021.01.28 | O | [Link](https://developers.mopub.com/publishers/android/ "Link")
+| `Smaato` | 21.5.7 | 2021.01.28 | O | [Link](https://www.smaato.com/resources/sdks/ "Link")
 
 ## Development Environment
 - Android Studio 권장 (Recommended)
