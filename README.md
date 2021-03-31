@@ -1,21 +1,21 @@
 # AdMixerSample
 
 - Admixer Android SDK Sample Project   
-- Current Admixer SDK Version 2.2.0 / date. 2021.01.28
+- Current Admixer SDK Version 2.2.0 / SDK update date. 2021.03.08
 
 ## AdMixer SDK Support Mediation Version
 
-| AdNetwork | Version | Check Date | compatible | download
+| AdNetwork | Version | Check Date | compatible | link
 |---|:---:|---:|:---:|:---:|
-| `AdMixer` | 2.2.0 | 2021.01.28 | O | [다운로드](https://github.com/Nasmedia-Tech/admixer_android_sample/archive/refs/heads/master.zip/ "download link")
-| `Adfit` | 3.7.1 | 2021.01.28 | O | [다운로드](https://github.com/adfit/adfit-android-sdk/ "download link")
-| `Admob` | 19.7.0 | 2021.01.28 | O | [다운로드](https://developers.google.com/admob/android/sdk?hl=ko/ "download link")
-| `Cauly` | 3.5.14 | 2021.01.28 | O | [다운로드](https://github.com/cauly/Android-SDK/ "download link")
-| `Facebook` | 6.2.0 | 2021.01.28 | O | [다운로드](https://developers.facebook.com/docs/app-events/getting-started-app-events-android "download link")
-| `DawinClick` | 3.16.7 | 2021.01.28 | O | [다운로드](https://click.dawin.tv/poc/#/sdk "download link")
-| `MANPLUS` | 200 | 2021.01.28 | O | [다운로드](http://docs.meba.kr/s-plus/index/2-sdk/ "download link")
-| `Mopub` | 5.15.0 | 2021.01.28 | O | [다운로드](https://developers.mopub.com/publishers/android/ "download link")
-| `Smaato` | 21.5.7 | 2021.01.28 | O | [다운로드](https://www.smaato.com/resources/sdks/ "download link")
+| `AdMixer` | 2.2.0 | 2021.01.28 | O | [link](https://github.com/Nasmedia-Tech/admixer_android_sample/archive/refs/heads/master.zip/ "link")
+| `Adfit` | 3.7.1 | 2021.01.28 | O | [link](https://github.com/adfit/adfit-android-sdk/ "link")
+| `Admob` | 19.7.0 | 2021.01.28 | O | [link](https://developers.google.com/admob/android/sdk?hl=ko/ "link")
+| `Cauly` | 3.5.14 | 2021.01.28 | O | [link](https://github.com/cauly/Android-SDK/ "link")
+| `Facebook` | 6.2.0 | 2021.01.28 | O | [link](https://developers.facebook.com/docs/audience-network/guides/add-sdk/ "link")
+| `DawinClick` | 3.16.7 | 2021.01.28 | O | [link](https://click.dawin.tv/poc/#/sdk "link")
+| `MANPLUS` | 200 | 2021.01.28 | O | [link](http://docs.meba.kr/s-plus/index/2-sdk/ "link")
+| `Mopub` | 5.15.0 | 2021.01.28 | O | [link](https://developers.mopub.com/publishers/android/ "link")
+| `Smaato` | 21.5.7 | 2021.01.28 | O | [link](https://www.smaato.com/resources/sdks/ "link")
 
 ## Development Environment
 - Android Studio 권장 (Recommended)
@@ -154,7 +154,7 @@ apply plugin: 'com.google.gms.google-services' // Common (google play service �
 
 ## Step 3. Project Setting
 
-### 3-1 Android 11 업데이트에 따른 READ_PHONE_STATE 추가 설정 (옵션) [Link](https://developer.android.com/preview/privacy/permissions?hl=ko)   
+### 3-1 Android 11 업데이트에 따른 READ_PHONE_STATE 추가 설정 (옵션) [Link](https://developer.android.com/about/versions/11/privacy/permissions#phone-numbers)   
 - READ_PHONE_STATE 관련 처리   
   - Android 11 부터 앱에서 전화번호를 읽을 때 사용하는 전화 권한 변경됩니다.
   - 앱이 Android 11을 타겟팅하고 다음 목록에 표시된 전화번호 API에 액세스해야 하는 경우 READ_PHONE_STATE 권한 대신 READ_PHONE_NUMBERS 권한을 요청해야 합니다. 
