@@ -21,7 +21,7 @@
 - Android Studio 권장 (Recommended)
 - targetSdkVersion 29 이상 권장 (2020.11.02 부터 앱 업데이트 시 필수, [Link](https://developer.android.com/distribute/best-practices/develop/target-sdk?hl=ko))
 
-How to use ?
+How to use ? 
 =============
 
 ## Step 1. Gradle Setting
