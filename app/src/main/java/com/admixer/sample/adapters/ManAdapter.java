@@ -127,10 +127,11 @@ public class ManAdapter extends BaseAdAdapter implements AdListener, OnCommandCo
                 adView = new AdManView(baseActivity);
 
                 ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(
-                        ViewGroup.LayoutParams.MATCH_PARENT,
-                        parentAdView.getMeasuredHeight());
+                        ViewGroup.LayoutParams.WRAP_CONTENT,
+                        ViewGroup.LayoutParams.WRAP_CONTENT);
                 adView.setVisibility(View.GONE);
                 adView.setLayoutParams(params);
+				parentAdView.addView(adView);
 
                 adView.setData(adData, this);
 
@@ -218,7 +219,6 @@ public class ManAdapter extends BaseAdAdapter implements AdListener, OnCommandCo
 
                     if (strAdType.equals("banner")) {
                         adView.setVisibility(View.VISIBLE);
-                        adView.addBannerView(parentAdView);
                         fireOnAdReceived();
                     }
 
