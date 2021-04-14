@@ -13,7 +13,7 @@
 | `Cauly` | 3.5.14 | 2021.01.28 | O | [Link](https://github.com/cauly/Android-SDK/ "Link")
 | `Facebook` | 6.2.0 | 2021.01.28 | O | [Link](https://developers.facebook.com/docs/audience-network/guides/add-sdk/ "Link")
 | `DawinClick` | 3.16.7 | 2021.01.28 | O | [Link](https://click.dawin.tv/poc/#/sdk "Link")
-| `MANPLUS` | 200 | 2021.01.28 | O | [Link](http://docs.meba.kr/s-plus/index/2-sdk/ "Link")
+| `MANPLUS` | 200 | 2021.01.28 | O | [Link](http://docs.meba.kr/s-plus/index/sdk/ "Link")
 | `Mopub` | 5.15.0 | 2021.01.28 | O | [Link](https://developers.mopub.com/publishers/android/ "Link")
 | `Smaato` | 21.5.7 | 2021.01.28 | O | [Link](https://www.smaato.com/resources/sdks/ "Link")
 
