@@ -1,3 +1,6 @@
+# 문의사항 관련
+- 문의사항은 https://partner.admixer.co.kr/ 사이트를 통해 1:1 문의로 연락 주시기 바랍니다.
+
 # AdMixerSample
 
 - Admixer Android SDK Sample Project   
