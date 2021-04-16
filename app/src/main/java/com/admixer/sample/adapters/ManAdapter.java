@@ -27,7 +27,7 @@ import com.mezzomedia.man.view.AdManPage;
 import com.mezzomedia.man.view.AdManView;
 
 import org.json.JSONObject;
-
+ 
 public class ManAdapter extends BaseAdAdapter implements AdListener, OnCommandCompletedListener {
 
     String id;
