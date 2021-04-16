@@ -346,10 +346,20 @@ public class ManAdapter extends BaseAdAdapter implements AdListener, OnCommandCo
         if (AdEvent.Type.CLICK.equals(type)) {
             //광고 클릭 이벤트
             Logger.writeLog(LogLevel.Debug, "Man onAdClick");
+            if (interstitial != null) {
+                destroyInter();
+            } else {
+                onDestroyBanner();
+            }
         } else if (AdEvent.Type.CLOSE.equals(type)) {
             //광고 닫기 이벤트
             Logger.writeLog(LogLevel.Debug, "Man onInterClose");
-            fireOnInterstitialAdClosed();
+            if (interstitial != null) {
+                destroyInter();
+                fireOnInterstitialAdClosed();
+            } else {
+                onDestroyBanner();
+            }
         } else if (AdEvent.Type.COMPLETE.equals(type)) {
             //동영상 q5 트래킹
         } else if (AdEvent.Type.IMP.equals(type)) {
@@ -381,9 +391,9 @@ public class ManAdapter extends BaseAdAdapter implements AdListener, OnCommandCo
     public void onDestroyBanner() {
         if (adView != null) {
             adView.onDestroy();
+	    adView = null;
+            Logger.writeLog(LogLevel.Debug, "Man onDestroyBanner close banner");
         }
-        adView = null;
-        Logger.writeLog(LogLevel.Debug, "Man onDestroyBanner close banner");
     }
 
     public void destroyInter() {
