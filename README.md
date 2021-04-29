@@ -117,7 +117,7 @@ dependencies {
     implementation 'com.google.gms:google-services:4.3.4'
     
     // For AdMixer (필수)
-    implementation files('libs/AdMixer_2.2.0.jar')
+    implementation files('libs/AdMixer_2.3.0.jar')
 
     // For Admob (선택)
     implementation 'com.google.firebase:firebase-ads:19.7.0'
