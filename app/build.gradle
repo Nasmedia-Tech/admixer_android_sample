@@ -48,7 +48,7 @@ dependencies {
     implementation 'com.android.support:multidex:1.0.3'
 
     // For AdMixer (필수)
-    implementation files('libs/AdMixer_2.2.0.jar')
+    implementation files('libs/AdMixer_2.3.0.jar')
 
     // For Admob (선택)
     implementation 'com.google.firebase:firebase-ads:19.7.0'

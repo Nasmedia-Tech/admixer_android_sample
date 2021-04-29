@@ -18,13 +18,13 @@ import com.admixer.common.command.Command;
 import com.admixer.common.command.Command.OnCommandCompletedListener;
 import com.admixer.common.command.DelayedCommand;
 import com.admixer.mediation.BaseAdAdapter;
-import com.mezzomedia.man.AdConfig;
-import com.mezzomedia.man.AdEvent;
-import com.mezzomedia.man.AdListener;
-import com.mezzomedia.man.AdResponseCode;
-import com.mezzomedia.man.data.AdData;
-import com.mezzomedia.man.view.AdManPage;
-import com.mezzomedia.man.view.AdManView;
+import com.mmc.man.AdConfig;
+import com.mmc.man.AdEvent;
+import com.mmc.man.AdListener;
+import com.mmc.man.AdResponseCode;
+import com.mmc.man.data.AdData;
+import com.mmc.man.view.AdManPage;
+import com.mmc.man.view.AdManView;
 
 import org.json.JSONObject;
  

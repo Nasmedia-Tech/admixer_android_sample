@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -22,13 +20,9 @@ import com.admixer.common.Logger;
 import com.admixer.common.Logger.LogLevel;
 import com.facebook.ads.AudienceNetworkAds;
 import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
-import com.mezzomedia.man.AdConfig;
-import com.mezzomedia.man.view.AdManView;
+import com.mmc.man.view.AdManView;
 import com.mopub.common.MoPub;
 import com.mopub.common.SdkConfiguration;
-import com.mopub.common.SdkInitializationListener;
 import com.mopub.common.logging.MoPubLog;
 import com.smaato.sdk.core.SmaatoSdk;
 
@@ -58,7 +52,7 @@ public class AdMixerSampleActivity extends Activity implements InterstitialAdLis
         super.onCreate(savedInstanceState);
 
 		// 로그 레벨 설정
-        Logger.setLogLevel(LogLevel.Verbose);
+		Logger.setLogLevel(LogLevel.Verbose);
 
 		// 필요한 adapter 등록
 //		AdMixer.registerAdapter(AdMixer.ADAPTER_ADFIT, "com.admixer.sample.adapters.AdfitAdapter");
@@ -72,7 +66,7 @@ public class AdMixerSampleActivity extends Activity implements InterstitialAdLis
 
 		// AdMixer 초기화를 위해 반드시 광고호출 전에 앱에서 1회 호출해주셔야 합니다.
 		// adunits 파라미터는 앱 내에서 사용할 모든 adunit_id를 배열형태로 넘겨주셔야 합니다.
-	    // YOUR_ADUNIT_ID 는 Admixer 사이트 미디어 > 미디어관리 > 미디어 등록에서 발급받은 Adunit ID 입니다.
+		// YOUR_ADUNIT_ID 는 Admixer 사이트 미디어 > 미디어관리 > 미디어 등록에서 발급받은 Adunit ID 입니다.
 
 		AdMixer.init(this, mediaKey, adunits);
 
@@ -93,7 +87,7 @@ public class AdMixerSampleActivity extends Activity implements InterstitialAdLis
 
 		// Mopub 적용 시에 SDK 초기화 호출이 필요
 		SdkConfiguration sdkConfiguration = new SdkConfiguration.Builder("YOUR_ANY_MOPUB_ADUNIT_ID")
-													.withLogLevel(MoPubLog.LogLevel.DEBUG).build();
+				.withLogLevel(MoPubLog.LogLevel.DEBUG).build();
 		MoPub.initializeSdk(this, sdkConfiguration, () -> { });
 
 		// Smaato 적용 시에 SDK 초기화 호출이 필요
@@ -104,35 +98,40 @@ public class AdMixerSampleActivity extends Activity implements InterstitialAdLis
 		RelativeLayout.LayoutParams param = new RelativeLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
 		setContentView(layout, param);
 
-        addButtons();
+		addButtons();
 		addBannerView();
-    }
+	}
 
-    @Override
-    protected void onPause() { // 생명주기에 따라 설정이 반드시 필요합니다.
-		if(adView1 != null)
+	@Override
+	protected void onPause() { // 생명주기에 따라 설정이 반드시 필요합니다.
+		if (adView1 != null)
 			adView1.onPause();
-		if(adView2 != null)
+		if (adView2 != null)
 			adView2.onPause();
 
-    	super.onPause();
+		if(adView1 != null)
+			adView1.onDestroy();
+		if(adView2 != null)
+			adView2.onDestroy();
+
+		super.onPause();
 	}
 
 	@Override
 	protected void onDestroy() {
-		if(interstitialAd != null) {
+		if (interstitialAd != null) {
 			interstitialAd.stopInterstitial();
 			interstitialAd = null;
 		}
 
-    	super.onDestroy();
+		super.onDestroy();
 	}
 
 	@Override
 	protected void onResume() { // 생명주기에 따라 설정이 반드시 필요합니다.
-		if(adView1 != null)
-    		adView1.onResume();
-		if(adView2 != null)
+		if (adView1 != null)
+			adView1.onResume();
+		if (adView2 != null)
 			adView2.onResume();
 
 		super.onResume();

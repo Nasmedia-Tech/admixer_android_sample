@@ -2,6 +2,7 @@
 
 | Version | Note 
 |:---:|:---|
+| `2.3.0` <br/> `2021.04.29` | 구글 정책 변경 대응 AdMixer 업데이트 및 Manplus SDK lib 변경에 따른 ManAdapter, Sample Project 수정 |
 | `2.2.0` <br/> `2021.04.16` | Manplus 배너 or 전면광고 클릭 or 닫기 시, onDestory 호출 |
 | `2.2.0` <br/> `2021.04.09` | Manplus 를 최초 첫 호출 시, 광고 노출 안되는 부분 수정 (ManAdapter)<br/> (Manplus 광고 1순위 시, 가로/세로 Banner 영역 설정 오류)|
 | `2.2.0` <br/> `2021.03.08` | - Admixer SDK 업데이트 2.1.3 -> 2.2.0 <br/> - 각 미디에이션 업데이트에 따른 Adapter 업데이트 <br/> - 가이드 문서 업데이트 <br/> - 각 build.gradle dependencies 라이브러리 업데이트 일 기준 최신버전으로 변경 <br/> - Admob, Cauly, Manplus Adapter 수정<br/> - Manplus 전면광고 2가지 모드 지원|

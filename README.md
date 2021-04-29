@@ -4,19 +4,19 @@
 # AdMixerSample
 
 - Admixer Android SDK Sample Project   
-- Current Admixer SDK Version 2.2.0 / SDK update date. 2021.03.08
+- Current Admixer SDK Version 2.3.0 / SDK update date. 2021.04.29
 
 ## AdMixer SDK Support Mediation Version
 
 | AdNetwork | Version | Check Date | Compatible | Link
 |---|:---:|---:|:---:|:---:|
-| `AdMixer` | 2.2.0 | 2021.01.28 | O | [Link](https://github.com/Nasmedia-Tech/admixer_android_sample/archive/refs/heads/master.zip/ "Link")
+| `AdMixer` | 2.3.0 | 2021.04.29 | O | [Link](https://github.com/Nasmedia-Tech/admixer_android_sample/archive/refs/heads/master.zip/ "Link")
 | `Adfit` | 3.7.1 | 2021.01.28 | O | [Link](https://github.com/adfit/adfit-android-sdk/ "Link")
 | `Admob` | 19.7.0 | 2021.01.28 | O | [Link](https://developers.google.com/admob/android/sdk?hl=ko/ "Link")
 | `Cauly` | 3.5.14 | 2021.01.28 | O | [Link](https://github.com/cauly/Android-SDK/ "Link")
 | `Facebook` | 6.2.0 | 2021.01.28 | O | [Link](https://developers.facebook.com/docs/audience-network/guides/add-sdk/ "Link")
 | `DawinClick` | 3.16.7 | 2021.01.28 | O | [Link](https://click.dawin.tv/poc/#/sdk "Link")
-| `MANPLUS` | 200 | 2021.01.28 | O | [Link](http://docs.meba.kr/s-plus/index/sdk/ "Link")
+| `MANPLUS` | 200 | 2021.04.29 | O | [Link](http://docs.meba.kr/s-plus/index/sdk/ "Link")
 | `Mopub` | 5.15.0 | 2021.01.28 | O | [Link](https://developers.mopub.com/publishers/android/ "Link")
 | `Smaato` | 21.5.7 | 2021.01.28 | O | [Link](https://www.smaato.com/resources/sdks/ "Link")
 
@@ -452,6 +452,9 @@ void onPause() {
    if(adView != null)
       adView.onPause();
 
+   if(adView != null)
+      adView.onDestroy();
+
    super.onPause();
 }
 
@@ -497,8 +500,8 @@ public class LayoutSampleActivity extends Activity {
 ```
 
 ### 4-3 Banner 광고 추가 예제 (이벤드 핸들러)
-- 다음은 Banner광고에서 발생하는 이벤트를 Activity에서 받기 위해 AdViewListener 인터페이스를 구현한 것입니다. 
-- AdViewListener 인터페이스를 구현한 객체만이 AdView의 setAdViewListener메소드의 파라메터로 지정되어 이벤트를 받을 수 있습니다.   
+- 다음은 Banner 광고에서 발생하는 이벤트를 Activity 에서 받기 위해 AdViewListener 인터페이스를 구현한 것입니다.
+- AdViewListener 인터페이스를 구현한 객체만이 AdView 의 setAdViewListener 메소드의 파라메터로 지정되어 이벤트를 받을 수 있습니다.
 
 
 ```
