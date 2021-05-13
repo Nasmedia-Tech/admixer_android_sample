@@ -11,14 +11,14 @@
 | AdNetwork | Version | Check Date | Compatible | Link
 |---|:---:|---:|:---:|:---:|
 | `AdMixer` | 2.3.0 | 2021.04.29 | O | [Link](https://github.com/Nasmedia-Tech/admixer_android_sample/archive/refs/heads/master.zip/ "Link")
-| `Adfit` | 3.7.1 | 2021.01.28 | O | [Link](https://github.com/adfit/adfit-android-sdk/ "Link")
-| `Admob` | 19.7.0 | 2021.01.28 | O | [Link](https://developers.google.com/admob/android/sdk?hl=ko/ "Link")
-| `Cauly` | 3.5.14 | 2021.01.28 | O | [Link](https://github.com/cauly/Android-SDK/ "Link")
-| `Facebook` | 6.2.0 | 2021.01.28 | O | [Link](https://developers.facebook.com/docs/audience-network/guides/add-sdk/ "Link")
-| `DawinClick` | 3.16.7 | 2021.01.28 | O | [Link](https://click.dawin.tv/poc/#/sdk "Link")
+| `Adfit` | 3.7.1 | 2021.05.13 | O | [Link](https://github.com/adfit/adfit-android-sdk/ "Link")
+| `Admob` | 20.1.0 | 2021.05.13 | O | [Link](https://developers.google.com/admob/android/sdk?hl=ko/ "Link")
+| `Cauly` | 3.5.16 | 2021.05.13 | O | [Link](https://github.com/cauly/Android-SDK/ "Link")
+| `Facebook` | 6.4.0 | 2021.05.13 | O | [Link](https://developers.facebook.com/docs/audience-network/guides/add-sdk/ "Link")
+| `DawinClick` | 3.16.7 | 2021.05.13 | O | [Link](https://click.dawin.tv/poc/#/sdk "Link")
 | `MANPLUS` | 200 | 2021.04.29 | O | [Link](http://docs.meba.kr/s-plus/index/sdk/ "Link")
-| `Mopub` | 5.15.0 | 2021.01.28 | O | [Link](https://developers.mopub.com/publishers/android/ "Link")
-| `Smaato` | 21.5.7 | 2021.01.28 | O | [Link](https://www.smaato.com/resources/sdks/ "Link")
+| `Mopub` | 5.16.4 | 2021.05.13 | O | [Link](https://developers.mopub.com/publishers/android/ "Link")
+| `Smaato` | 21.5.9 | 2021.05.13 | O | [Link](https://www.smaato.com/resources/sdks/ "Link")
 
 ## Development Environment
 - Android Studio 권장 (Recommended)
@@ -114,16 +114,16 @@ dependencies {
     
     // 공통 (필수)
     implementation 'com.android.support:multidex:2.0.1'
-    implementation 'com.google.gms:google-services:4.3.4'
+    implementation 'com.google.gms:google-services:4.3.5'
     
     // For AdMixer (필수)
     implementation files('libs/AdMixer_2.3.0.jar')
 
     // For Admob (선택)
-    implementation 'com.google.firebase:firebase-ads:19.7.0'
+    implementation 'com.google.firebase:firebase-ads:20.1.0'
     
     // For Cauly (선택)
-    implementation 'com.fsn.cauly:cauly-sdk:3.5.14'
+    implementation 'com.fsn.cauly:cauly-sdk:3.5.16'
 	
     // For ManPlus (선택)
     implementation files('libs/adMan.jar')
@@ -132,20 +132,20 @@ dependencies {
     implementation files('libs/DawinClickSDK_3.16.7.jar')
 
     // For Facebook (선택)
-    implementation "com.facebook.android:audience-network-sdk:6.2.0"
-    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation "com.facebook.android:audience-network-sdk:6.4.0"
+    implementation "com.android.support:support-annotations:28.0.0"
 
     // For Adfit (선택)
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.21'
     implementation "com.kakao.adfit:ads-base:3.7.1"
 
     // For Mopub (선택)
-    implementation('com.mopub:mopub-sdk:5.15.0@aar') {
+    implementation('com.mopub:mopub-sdk:5.16.4@aar') {
         transitive = true
     }
 
     // For Smaato (선택)
-    implementation 'com.smaato.android.sdk:smaato-sdk:21.5.7'
+    implementation 'com.smaato.android.sdk:smaato-sdk:21.5.9'
 }
 
 apply plugin: 'com.google.gms.google-services' // Common (google play service 적용)
@@ -322,15 +322,17 @@ AndroidManifest.xml 적용 사항
 
    <!-- For MoPub -->
    <!-- MoPub SDK 버전에 따른 변경사항은 다음 링크를 참고하십시오. https://developers.mopub.com/publishers/android/changelog/-->
+   <!-- https://developers.mopub.com/publishers/android/integrate/#step-3-update-your-android-manifest/ -->
    <!-- MoPub's consent dialog -->
-   <activity android:name="com.mopub.common.privacy.ConsentDialogActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
+   <!-- Mopub SDK v.5.10.0 이상은 아래 선언 없이 사용 가능하다고 함. SDK Library 내부 안에 선언되어 있음, 자세한 사항은 Mopub SDK 가이드 참조 -->
+   <!-- <activity android:name="com.mopub.common.privacy.ConsentDialogActivity" android:configChanges="keyboardHidden|orientation|screenSize"/> -->
 
    <!-- All ad formats -->
-   <activity android:name="com.mopub.common.MoPubBrowser" android:configChanges="keyboardHidden|orientation|screenSize"/>
+   <!-- <activity android:name="com.mopub.common.MoPubBrowser" android:configChanges="keyboardHidden|orientation|screenSize"/> -->
 
    <!-- Interstitials -->
-   <activity android:name="com.mopub.mobileads.MraidVideoPlayerActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
-   <activity android:name="com.mopub.mobileads.MoPubFullscreenActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
+   <!-- <activity android:name="com.mopub.mobileads.MraidVideoPlayerActivity" android:configChanges="keyboardHidden|orientation|screenSize"/> -->
+   <!-- <activity android:name="com.mopub.mobileads.MoPubFullscreenActivity" android:configChanges="keyboardHidden|orientation|screenSize"/> -->
             
    </manifest> 
 ```
@@ -547,7 +549,7 @@ public class AdMixerSampleActivity extends Activity implements AdViewListener {
 - 유의 사항
   - 광고 로딩이 성공한 이후 지나치게 시간이 많이 지나가면 showInterstitial()을 호출했을 때에 제대로 광고가 표시되지 않을 수 있습니다. 
   - showInterstitial()을 호출하지 않으면 광고가 표시되지 않습니다.
-  - loadInterstitial()을 호출하고 일정시간이 지나면 광고가 노출이 되어도 유효노출로 처리되지 않는 경우가 있습니다. 
+  - loadInterstitial()을 호출하고 일정시간이 지나면 광고가 노출이 되어도 유효 노출로 처리되지 않는 경우가 있습니다.
   - 이 경우는 애드네트워크별로 다르므로, 해당 애드네트워크사에 확인하여 loadInterstitial() 후 적절한 타임아웃을 걸어서 재호출 하는 방식으로 사용하시기 바랍니다. 
   - 애드네트워크별로 최소호출간격이 있는 경우도 있으므로, 적당한 타임아웃을 설정하시기 바랍니다. (ex. AdMob 광고노출인증유효시간 20분)
 
@@ -694,7 +696,7 @@ public void onInterstitialAdClosed(InterstitialAd interstitialAd) {
 // For Admob
 adInfo.setAdapterAdInfo(AdMixer.ADAPTER_ADMOB, "adSize", "BANNER");
 * AdMob 배너 종류 설정 
-- BANNER, SMART_BANNER, LARGE_BANNER, MEDIUM_RECTANGLE, FULL_BANNER, LEADERBOARD
+- BANNER, ADAPTIVE_BANNER, ~~SMART_BANNER~~, LARGE_BANNER, MEDIUM_RECTANGLE, FULL_BANNER, LEADERBOARD
 - Default : "BANNER"
 
 // For Cauly

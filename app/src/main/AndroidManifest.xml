@@ -92,15 +92,15 @@
 
 		<!-- For MoPub -->
 		<!-- MoPub SDK 버전에 따른 변경사항은 다음 링크를 참고하십시오. https://developers.mopub.com/publishers/android/changelog/-->
+		<!-- https://developers.mopub.com/publishers/android/integrate/#step-3-update-your-android-manifest/ -->
 		<!-- MoPub's consent dialog -->
-		<activity android:name="com.mopub.common.privacy.ConsentDialogActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
-
+		<!-- Mopub SDK v.5.10.0 이상은 아래 선언 없이 사용 가능하다고 함. SDK Library 내부 안에 선언되어 있음, 자세한 사항은 Mopub SDK 가이드 참조 -->
+<!--		<activity android:name="com.mopub.common.privacy.ConsentDialogActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>-->
 		<!-- All ad formats -->
-		<activity android:name="com.mopub.common.MoPubBrowser" android:configChanges="keyboardHidden|orientation|screenSize"/>
-
+<!--		<activity android:name="com.mopub.common.MoPubBrowser" android:configChanges="keyboardHidden|orientation|screenSize"/>-->
 		<!-- Interstitials -->
-		<activity android:name="com.mopub.mobileads.MraidVideoPlayerActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
-		<activity android:name="com.mopub.mobileads.MoPubFullscreenActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
+<!--		<activity android:name="com.mopub.mobileads.MraidVideoPlayerActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>-->
+<!--		<activity android:name="com.mopub.mobileads.MoPubFullscreenActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>-->
 
 	</application>
 

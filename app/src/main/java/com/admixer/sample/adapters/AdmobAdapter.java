@@ -3,6 +3,8 @@ package com.admixer.sample.adapters;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
+import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.RelativeLayout;
@@ -47,7 +49,7 @@ public class AdmobAdapter extends BaseAdAdapter {
 	Activity baseActivity;
 
 	//adapterAdInfo
-	String[] adSizeList = {"BANNER", "SMART_BANNER", "LARGE_BANNER", "MEDIUM_RECTANGLE", "FULL_BANNER", "LEADERBOARD"};
+	String[] adSizeList = {"BANNER", "ADAPTIVE_BANNER", "SMART_BANNER", "LARGE_BANNER", "MEDIUM_RECTANGLE", "FULL_BANNER", "LEADERBOARD"};
 	String adSize = adSizeList[0];
 
 	public String getAdapterName() {
@@ -126,6 +128,9 @@ public class AdmobAdapter extends BaseAdAdapter {
 			case "SMART_BANNER" :
 				adSize	= AdSize.SMART_BANNER;
 				params = new RelativeLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+				break;
+			case "ADAPTIVE_BANNER" :
+				adSize = getAdSize();
 				break;
 			case "LARGE_BANNER" :
 				adSize 	= AdSize.LARGE_BANNER;
@@ -284,4 +289,16 @@ public class AdmobAdapter extends BaseAdAdapter {
 
 	}
 
+	private AdSize getAdSize() {
+		Display display = baseActivity.getWindowManager().getDefaultDisplay();
+		DisplayMetrics outMetrics = new DisplayMetrics();
+		display.getMetrics(outMetrics);
+
+		float widthPixels = outMetrics.widthPixels;
+		float density = outMetrics.density;
+
+		int adWidth = (int) (widthPixels / density);
+
+		return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(baseActivity, adWidth);
+	}
 }

@@ -51,16 +51,16 @@ dependencies {
     implementation files('libs/AdMixer_2.3.0.jar')
 
     // For Admob (선택)
-    implementation 'com.google.firebase:firebase-ads:19.7.0'
+    implementation 'com.google.firebase:firebase-ads:20.1.0'
     // For Cauly (선택)
-    implementation 'com.fsn.cauly:cauly-sdk:3.5.14'
+    implementation 'com.fsn.cauly:cauly-sdk:3.5.16'
     // For ManPlus (Man) (선택)
     implementation files('libs/adMan.jar')
     // For DawinClick (선택)
     implementation files('libs/DawinClickSDK_3.16.7.jar')
 
     // For Facebook (선택)
-    implementation "com.facebook.android:audience-network-sdk:6.2.0"
+    implementation "com.facebook.android:audience-network-sdk:6.4.0"
     implementation "com.android.support:support-annotations:28.0.0"
 
     // For Adfit (선택)
@@ -68,12 +68,12 @@ dependencies {
     implementation "com.kakao.adfit:ads-base:3.7.1"
 
     // For Mopub (선택)
-    implementation('com.mopub:mopub-sdk:5.15.0@aar') {
+    implementation('com.mopub:mopub-sdk:5.16.4@aar') {
         transitive = true
     }
 
     // For Smaato (선택)
-    implementation 'com.smaato.android.sdk:smaato-sdk:21.5.7'
+    implementation 'com.smaato.android.sdk:smaato-sdk:21.5.9'
 }
 
 apply plugin: 'com.google.gms.google-services' // Common (google play service 적용)
