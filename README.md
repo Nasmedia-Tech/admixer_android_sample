@@ -10,13 +10,13 @@
 
 | AdNetwork | Version | Check Date | Compatible | Link
 |---|:---:|---:|:---:|:---:|
-| `AdMixer` | 2.3.0 | 2021.04.29 | O | [Link](https://github.com/Nasmedia-Tech/admixer_android_sample/archive/refs/heads/master.zip/ "Link")
+| `AdMixer` | 2.3.0 | 2021.05.13 | O | [Link](https://github.com/Nasmedia-Tech/admixer_android_sample/archive/refs/heads/master.zip/ "Link")
 | `Adfit` | 3.7.1 | 2021.05.13 | O | [Link](https://github.com/adfit/adfit-android-sdk/ "Link")
 | `Admob` | 20.1.0 | 2021.05.13 | O | [Link](https://developers.google.com/admob/android/sdk?hl=ko/ "Link")
 | `Cauly` | 3.5.16 | 2021.05.13 | O | [Link](https://github.com/cauly/Android-SDK/ "Link")
 | `Facebook` | 6.4.0 | 2021.05.13 | O | [Link](https://developers.facebook.com/docs/audience-network/guides/add-sdk/ "Link")
 | `DawinClick` | 3.16.7 | 2021.05.13 | O | [Link](https://click.dawin.tv/poc/#/sdk "Link")
-| `MANPLUS` | 200 | 2021.04.29 | O | [Link](http://docs.meba.kr/s-plus/index/sdk/ "Link")
+| `MANPLUS` | 200 | 2021.05.13 | O | [Link](http://docs.meba.kr/s-plus/index/sdk/ "Link")
 | `Mopub` | 5.16.4 | 2021.05.13 | O | [Link](https://developers.mopub.com/publishers/android/ "Link")
 | `Smaato` | 21.5.9 | 2021.05.13 | O | [Link](https://www.smaato.com/resources/sdks/ "Link")
 
