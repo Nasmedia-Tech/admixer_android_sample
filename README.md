@@ -696,7 +696,7 @@ public void onInterstitialAdClosed(InterstitialAd interstitialAd) {
 // For Admob
 adInfo.setAdapterAdInfo(AdMixer.ADAPTER_ADMOB, "adSize", "BANNER");
 * AdMob 배너 종류 설정 
-- BANNER, ADAPTIVE_BANNER, ~~SMART_BANNER~~, LARGE_BANNER, MEDIUM_RECTANGLE, FULL_BANNER, LEADERBOARD
+- BANNER, ADAPTIVE_BANNER(New), SMART_BANNER(Deprecated), LARGE_BANNER, MEDIUM_RECTANGLE, FULL_BANNER, LEADERBOARD
 - Default : "BANNER"
 
 // For Cauly
